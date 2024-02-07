@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05A9B13D2B69F1D7002BE376 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A9B13C2B69F1D7002BE376 /* UILabelExtension.swift */; };
+		05B886B02B6B220F00620199 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886AF2B6B220F00620199 /* LobbyViewController.swift */; };
+		05B886B42B6B272700620199 /* LobbyFunctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B32B6B272700620199 /* LobbyFunctionCollectionViewCell.swift */; };
+		05B886B62B6B28FD00620199 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B52B6B28FD00620199 /* UICollectionViewExtension.swift */; };
+		05B886B92B6B3D4600620199 /* EnterCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B82B6B3D4600620199 /* EnterCheckViewController.swift */; };
+		05B886BC2B6B403700620199 /* InputInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BB2B6B403700620199 /* InputInfoTableViewCell.swift */; };
 		05ED601D2B634D57006A53F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED601C2B634D57006A53F0 /* AppDelegate.swift */; };
 		05ED601F2B634D57006A53F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED601E2B634D57006A53F0 /* SceneDelegate.swift */; };
-		05ED60212B634D57006A53F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60202B634D57006A53F0 /* ViewController.swift */; };
+		05ED60212B634D57006A53F0 /* BattleFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60202B634D57006A53F0 /* BattleFieldViewController.swift */; };
 		05ED60242B634D57006A53F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ED60222B634D57006A53F0 /* Main.storyboard */; };
 		05ED60262B634D58006A53F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05ED60252B634D58006A53F0 /* Assets.xcassets */; };
 		05ED60292B634D58006A53F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ED60272B634D58006A53F0 /* LaunchScreen.storyboard */; };
+		05ED60322B68CFFE006A53F0 /* GameInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60302B68CFFE006A53F0 /* GameInfo.xcdatamodeld */; };
+		05ED603C2B68D23C006A53F0 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED603B2B68D23C006A53F0 /* GameService.swift */; };
+		05ED60422B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60412B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift */; };
+		05ED60442B68DBCE006A53F0 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60432B68DBCE006A53F0 /* UITableViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05A9B13C2B69F1D7002BE376 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		05B886AF2B6B220F00620199 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		05B886B32B6B272700620199 /* LobbyFunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyFunctionCollectionViewCell.swift; sourceTree = "<group>"; };
+		05B886B52B6B28FD00620199 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		05B886B82B6B3D4600620199 /* EnterCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCheckViewController.swift; sourceTree = "<group>"; };
+		05B886BB2B6B403700620199 /* InputInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputInfoTableViewCell.swift; sourceTree = "<group>"; };
 		05ED60192B634D57006A53F0 /* MapleStoryManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapleStoryManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED601C2B634D57006A53F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED601E2B634D57006A53F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		05ED60202B634D57006A53F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05ED60202B634D57006A53F0 /* BattleFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldViewController.swift; sourceTree = "<group>"; };
 		05ED60232B634D57006A53F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05ED60252B634D58006A53F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05ED60282B634D58006A53F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05ED602A2B634D58006A53F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05ED60312B68CFFE006A53F0 /* Characters.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Characters.xcdatamodel; sourceTree = "<group>"; };
+		05ED603B2B68D23C006A53F0 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		05ED60412B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlefieldInfoTableViewCell.swift; sourceTree = "<group>"; };
+		05ED60432B68DBCE006A53F0 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +57,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05A9B1382B69E717002BE376 /* Battlefield */ = {
+			isa = PBXGroup;
+			children = (
+				05A9B13A2B69E743002BE376 /* ViewModel */,
+				05A9B1392B69E729002BE376 /* View */,
+				05ED60202B634D57006A53F0 /* BattleFieldViewController.swift */,
+			);
+			path = Battlefield;
+			sourceTree = "<group>";
+		};
+		05A9B1392B69E729002BE376 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05ED60412B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05A9B13A2B69E743002BE376 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		05A9B13B2B69E753002BE376 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				05ED60432B68DBCE006A53F0 /* UITableViewExtension.swift */,
+				05A9B13C2B69F1D7002BE376 /* UILabelExtension.swift */,
+				05B886B52B6B28FD00620199 /* UICollectionViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		05B886B12B6B26FA00620199 /* Lobby */ = {
+			isa = PBXGroup;
+			children = (
+				05B886B22B6B270D00620199 /* View */,
+				05B886AF2B6B220F00620199 /* LobbyViewController.swift */,
+			);
+			path = Lobby;
+			sourceTree = "<group>";
+		};
+		05B886B22B6B270D00620199 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05B886B32B6B272700620199 /* LobbyFunctionCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05B886B72B6B3CC800620199 /* EnterCheck */ = {
+			isa = PBXGroup;
+			children = (
+				05B886BA2B6B3EC200620199 /* View */,
+				05B886B82B6B3D4600620199 /* EnterCheckViewController.swift */,
+			);
+			path = EnterCheck;
+			sourceTree = "<group>";
+		};
+		05B886BA2B6B3EC200620199 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05B886BB2B6B403700620199 /* InputInfoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		05ED60102B634D57006A53F0 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +145,18 @@
 		05ED601B2B634D57006A53F0 /* MapleStoryManager */ = {
 			isa = PBXGroup;
 			children = (
+				05A9B13B2B69E753002BE376 /* Extension */,
+				05B886B12B6B26FA00620199 /* Lobby */,
+				05A9B1382B69E717002BE376 /* Battlefield */,
+				05B886B72B6B3CC800620199 /* EnterCheck */,
 				05ED601C2B634D57006A53F0 /* AppDelegate.swift */,
 				05ED601E2B634D57006A53F0 /* SceneDelegate.swift */,
-				05ED60202B634D57006A53F0 /* ViewController.swift */,
 				05ED60222B634D57006A53F0 /* Main.storyboard */,
 				05ED60252B634D58006A53F0 /* Assets.xcassets */,
 				05ED60272B634D58006A53F0 /* LaunchScreen.storyboard */,
 				05ED602A2B634D58006A53F0 /* Info.plist */,
+				05ED60302B68CFFE006A53F0 /* GameInfo.xcdatamodeld */,
+				05ED603B2B68D23C006A53F0 /* GameService.swift */,
 			);
 			path = MapleStoryManager;
 			sourceTree = "<group>";
@@ -138,9 +232,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05ED60212B634D57006A53F0 /* ViewController.swift in Sources */,
+				05B886B92B6B3D4600620199 /* EnterCheckViewController.swift in Sources */,
+				05B886BC2B6B403700620199 /* InputInfoTableViewCell.swift in Sources */,
+				05B886B62B6B28FD00620199 /* UICollectionViewExtension.swift in Sources */,
+				05ED60212B634D57006A53F0 /* BattleFieldViewController.swift in Sources */,
+				05B886B42B6B272700620199 /* LobbyFunctionCollectionViewCell.swift in Sources */,
+				05ED603C2B68D23C006A53F0 /* GameService.swift in Sources */,
+				05ED60422B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift in Sources */,
 				05ED601D2B634D57006A53F0 /* AppDelegate.swift in Sources */,
+				05A9B13D2B69F1D7002BE376 /* UILabelExtension.swift in Sources */,
 				05ED601F2B634D57006A53F0 /* SceneDelegate.swift in Sources */,
+				05B886B02B6B220F00620199 /* LobbyViewController.swift in Sources */,
+				05ED60322B68CFFE006A53F0 /* GameInfo.xcdatamodeld in Sources */,
+				05ED60442B68DBCE006A53F0 /* UITableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +399,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +428,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +464,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		05ED60302B68CFFE006A53F0 /* GameInfo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				05ED60312B68CFFE006A53F0 /* Characters.xcdatamodel */,
+			);
+			currentVersion = 05ED60312B68CFFE006A53F0 /* Characters.xcdatamodel */;
+			path = GameInfo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 05ED60112B634D57006A53F0 /* Project object */;
 }
