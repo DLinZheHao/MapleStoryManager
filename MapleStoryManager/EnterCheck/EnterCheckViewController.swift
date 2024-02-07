@@ -57,94 +57,48 @@ extension EnterCheckViewController: UITableViewDataSource, UITableViewDelegate {
 class IDCardViewModel {
     // 存储角色信息的数组
     var characters: [Character] = []
-    
-    // 存储输入数据的Subjects
-    var nameEntereds = [
-        CurrentValueSubject<String?, Never>(""),
-        CurrentValueSubject<String?, Never>(""),
-        CurrentValueSubject<String?, Never>("")
-    ]
-    var professionEntereds = [
-        CurrentValueSubject<String?, Never>(""),
-        CurrentValueSubject<String?, Never>(""),
-        CurrentValueSubject<String?, Never>("")
-    ]
-    
-    var nameErrorPublishers = [
-        PassthroughSubject<String, Never>(),
-        PassthroughSubject<String, Never>(),
-        PassthroughSubject<String, Never>()
-    ]
-    
-    var professionErrorPublishers = [
-        PassthroughSubject<String, Never>(),
-        PassthroughSubject<String, Never>(),
-        PassthroughSubject<String, Never>()
-    ]
-    
-    // 存储输入数据的Subject
-    var nameEntered = CurrentValueSubject<String?, Never>("")
-    var professionEntered = CurrentValueSubject<String?, Never>("")
-    
-    // 发布错误消息的 Subject
-    var nameErrorPublisher = PassthroughSubject<String, Never>()
-    var professionErrorPublisher = PassthroughSubject<String, Never>()
-    
+    var errorsPublisher = PassthroughSubject<[CheckDuplicate], Never>()
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        let count = 3 // 假设我们有三组输入
-        // 绑定并检查输入的名字和职业
-        for index in 0..<count {
-            bindInput(index: index)
+        // 监听每个Character的变化
+        for _ in 0..<3 { // 假定有3个角色输入
+            let newCharacter = Character()
+            characters.append(newCharacter)
+            
+            newCharacter.$name
+                //.dropFirst()
+                .sink { [weak self] _ in
+                    self?.checkForDuplicates()
+                }
+                .store(in: &cancellables)
+            
+            newCharacter.$profession
+                //.dropFirst()
+                .sink { [weak self] _ in
+                    self?.checkForDuplicates()
+                }
+                .store(in: &cancellables)
         }
     }
     
     private func checkForDuplicates() {
-        let names = nameEntereds.map { $0.value ?? "" }
-        let professions = professionEntereds.map { $0.value ?? "" }
+        let names = characters.map { $0.name }
+        let professions = characters.map { $0.profession }
         
-        // 检查名字重复
-        for (index, name) in names.enumerated() {
-            let duplicateIndexes = names.enumerated().filter { $0.element == name && !$0.element.isEmpty && $0.offset != index }.map { $0.offset }
-            if !duplicateIndexes.isEmpty || characters.contains(where: { $0.name == name }) {
-                nameErrorPublishers[index].send("名字重复了！")
-            } else {
-                nameErrorPublishers[index].send("")
-            }
-        }
+        // 计算重复
+        let nameErrors = names.map { name in names.filter { $0 == name }.count > 1 }
+        let professionErrors = professions.map { profession in professions.filter { $0 == profession }.count > 1 }
         
-        // 检查职业重复
-        for (index, profession) in professions.enumerated() {
-            let duplicateIndexes = professions.enumerated().filter { $0.element == profession && !$0.element.isEmpty && $0.offset != index }.map { $0.offset }
-            if !duplicateIndexes.isEmpty || characters.contains(where: { $0.profession == profession }) {
-                professionErrorPublishers[index].send("职业重复了！")
-            } else {
-                professionErrorPublishers[index].send("")
-            }
+        // 将错误状态发送给所有监听者
+        var states = [CheckDuplicate]()
+        for i in 0..<nameErrors.count {
+            let state = CheckDuplicate(name: nameErrors[i], profession: professionErrors[i])
+            states.append(state)
         }
+        errorsPublisher.send(states)
     }
 
-    private func bindInput(index: Int) {
-        nameEntereds[index]
-            .compactMap { $0 }
-            .removeDuplicates()
-            .sink { [weak self] _ in
-                self?.checkForDuplicates()
-            }
-            .store(in: &cancellables)
-            
-        professionEntereds[index]
-            .compactMap { $0 }
-            .removeDuplicates()
-            .sink { [weak self] _ in
-                self?.checkForDuplicates()
-            }
-            .store(in: &cancellables)
-    }
-
-
-    
 //    func addCharacter(name: String, profession: String) {
 //        let newCharacter = Character(name: name, profession: profession)
 //        if !self.characters.contains(newCharacter) {
@@ -169,6 +123,11 @@ class Character: ObservableObject {
         self.name = name
         self.profession = profession
     }
+}
+
+struct CheckDuplicate {
+    var name: Bool
+    var profession: Bool
 }
 
 //var nameEntered = CurrentValueSubject<String?, Never>("")
