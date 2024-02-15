@@ -31,23 +31,38 @@ class InputInfoTableViewCell: UITableViewCell {
     }
 
     func setupBindings() {
-           guard let cellIndex = cellIndex, viewModel != nil else { return }
-           
-           // 监听来自ViewModel的错误状态更新
-           viewModel.errorsPublisher
-               .receive(on: RunLoop.main)
-               .sink { [weak self] errors in
-                   // 确保cellIndex没有越界
-                   guard errors.indices.contains(cellIndex) else { return }
-                   let error = errors[cellIndex]
-                   
-                   // 更新名字和职业的错误提示UI
-                   self?.nameNoticeLabel.isHidden = !error.name
-                   self?.nameNoticeLabel.text = error.name ? "名字重复了！" : ""
-                   
-                   self?.professionNoticeLabel.isHidden = !error.profession
-                   self?.professionNoticeLabel.text = error.profession ? "职业重复了！" : ""
-               }
-               .store(in: &cancellables)
-       }
+        guard let cellIndex = cellIndex else { return }
+        
+        // 绑定名字输入框到ViewModel的对应CurrentValueSubject
+        nameTextField.textPublisher
+            .compactMap { $0 }
+            //.print()
+        // 使用cellIndex选择正确的CurrentValueSubject
+            .assign(to: \.characters[cellIndex].name, on: viewModel)
+            .store(in: &cancellables)
+        
+        // 绑定职业输入框到ViewModel的对应CurrentValueSubject
+        professionTextField.textPublisher
+            .compactMap { $0 }
+        // 使用cellIndex选择正确的CurrentValueSubject
+            .assign(to: \.characters[cellIndex].profession, on: viewModel)
+            .store(in: &cancellables)
+        
+        // 监听来自ViewModel的错误状态更新
+        viewModel.errorsPublisher
+            .receive(on: RunLoop.main)
+            .sink { [weak self] errors in
+                // 确保cellIndex没有越界
+                guard errors.indices.contains(cellIndex) else { return }
+                let error = errors[cellIndex]
+                
+                // 更新名字和职业的错误提示UI
+                self?.nameNoticeLabel.isHidden = !error.name
+                self?.nameNoticeLabel.text = error.name ? "名字重复了！" : ""
+                
+                self?.professionNoticeLabel.isHidden = !error.profession
+                self?.professionNoticeLabel.text = error.profession ? "职业重复了！" : ""
+            }
+            .store(in: &cancellables)
+    }
 }
