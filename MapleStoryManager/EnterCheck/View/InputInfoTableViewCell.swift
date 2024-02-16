@@ -19,8 +19,6 @@ class InputInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var nameNoticeLabel: UILabel!
     /// 角色職業重複通知
     @IBOutlet weak var professionNoticeLabel: UILabel!
-    
-    var viewModel: IDCardViewModel!
     // 新增一个属性用于存储当前单元格的索引
     var cellIndex: Int!
     
@@ -30,8 +28,45 @@ class InputInfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func setupBindings() {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        characterNumLabel.text = ""
+        nameTextField.text = ""
+        professionTextField.text = ""
+        nameNoticeLabel.text = ""
+        professionNoticeLabel.text = ""
+        nameNoticeLabel.isHidden = true
+        professionNoticeLabel.isHidden = true
+        cancellables.removeAll()
+    }
+    
+    func setupBindings(_ viewModel: IDCardViewModel) {
         guard let cellIndex = cellIndex else { return }
+        characterNumLabel.text = "角色\(cellIndex + 1)"
+        
+        let character = viewModel.characters[cellIndex]
+        character.$name
+            .compactMap { $0 }
+            .assign(to: \.text, on: nameTextField)
+            .store(in: &cancellables)
+        character.$profession
+            .compactMap { $0 }
+            .assign(to: \.text, on: professionTextField)
+            .store(in: &cancellables)
+
+        viewModel.$checkResults
+            .compactMap { result in
+                result.map { $0 }
+            }
+            .sink { [weak self] checkDuplicate in
+                guard let self = self else { return }
+                self.nameNoticeLabel.isHidden = !checkDuplicate[cellIndex].name
+                self.nameNoticeLabel.text = checkDuplicate[cellIndex].name ? "名稱重複了！" : ""
+                self.professionNoticeLabel.isHidden = !checkDuplicate[cellIndex].profession
+                self.professionNoticeLabel.text = checkDuplicate[cellIndex].profession ? "職業重複了！" : ""
+                
+            }
+            .store(in: &cancellables)
         
         // 绑定名字输入框到ViewModel的对应CurrentValueSubject
         nameTextField.textPublisher
@@ -58,10 +93,10 @@ class InputInfoTableViewCell: UITableViewCell {
                 
                 // 更新名字和职业的错误提示UI
                 self?.nameNoticeLabel.isHidden = !error.name
-                self?.nameNoticeLabel.text = error.name ? "名字重复了！" : ""
+                self?.nameNoticeLabel.text = error.name ? "名稱重複了！" : ""
                 
                 self?.professionNoticeLabel.isHidden = !error.profession
-                self?.professionNoticeLabel.text = error.profession ? "职业重复了！" : ""
+                self?.professionNoticeLabel.text = error.profession ? "職業重複了" : ""
             }
             .store(in: &cancellables)
     }

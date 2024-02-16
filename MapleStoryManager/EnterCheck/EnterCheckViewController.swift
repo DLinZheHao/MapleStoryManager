@@ -22,10 +22,6 @@ class EnterCheckViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        viewModel.characters = [Character(name: "哲豪", profession: "工程師"),
-//                                Character(name: "歐爾斯", profession: "劍豪")]
-        
         inputInfoTableView.delegate = self
         inputInfoTableView.dataSource = self
     }
@@ -41,15 +37,14 @@ class EnterCheckViewController: UIViewController {
 
 extension EnterCheckViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: InputInfoTableViewCell.identifier, for: indexPath)
         guard let inputCell = cell as? InputInfoTableViewCell else { return cell }
-        inputCell.viewModel = viewModel
         inputCell.cellIndex = indexPath.row
-        inputCell.setupBindings()
+        inputCell.setupBindings(viewModel)
         return inputCell
     }
 }
@@ -57,11 +52,16 @@ extension EnterCheckViewController: UITableViewDataSource, UITableViewDelegate {
 class IDCardViewModel {
     // 存储角色信息的数组
     var characters: [Character] = []
+    // 儲存驗證錯誤狀態
+    @Published var checkResults: [CheckDuplicate] = []
+    
     var errorsPublisher = PassthroughSubject<[CheckDuplicate], Never>()
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        characters = (0..<3).map { _ in Character() } // 假定有3個角色輸入
+        characters = (0..<10).map { _ in Character() } // 假定有１０個角色輸入
+        // 初始化检查结果数组，假设初始时没有错误
+        checkResults = Array(repeating: CheckDuplicate(name: false, profession: false), count: 10)
         
         let namePublisers = createNamePublishers(characters)
         let professionPublishers = createProfessionPublisers(characters)
@@ -71,7 +71,6 @@ class IDCardViewModel {
                 let combinedArray = firstArray.enumerated().map { (index, element1) in
                     (index, element1, secondArray[index])
                 }
-                
                 return combinedArray.map { index, names, professions in (index, names, professions)}
             }
             .eraseToAnyPublisher() // 转换为 AnyPublisher
@@ -85,9 +84,6 @@ class IDCardViewModel {
     }
 
     private func checkForDuplicates(_ combinedInfo: [(Int, String, String)]) {
-        // 初始化检查结果数组，假设初始时没有错误
-        var checkResults = Array(repeating: CheckDuplicate(name: false, profession: false), count: combinedInfo.count)
-
         // 提取名称和职业列表
         let namesWithIndex = combinedInfo.map { (index, name, _) in return (index, name) } // (Index, Name)
         let professionsWithIndex = combinedInfo.map { (index, _, profession) in return (index, profession) } // (Index, Profession)
@@ -97,6 +93,8 @@ class IDCardViewModel {
             let duplicateNamesCount = namesWithIndex.filter { $1 == name && !$1.isEmpty }.count
             if duplicateNamesCount > 1 {
                 checkResults[index].name = true
+            } else {
+                checkResults[index].name = false
             }
         }
 
@@ -105,13 +103,15 @@ class IDCardViewModel {
             let duplicateProfessionsCount = professionsWithIndex.filter { $1 == profession && !$1.isEmpty }.count
             if duplicateProfessionsCount > 1 {
                 checkResults[index].profession = true
+            } else {
+                checkResults[index].profession = false
             }
         }
-
+        
         // 发送更新的错误状态
         errorsPublisher.send(checkResults)
     }
-    
+    /// 名稱發布員創建
     private func createNamePublishers(_ characters: [Character]) -> AnyPublisher<[String], Never> {
         let initialPublisher = Just<[String]>([]).eraseToAnyPublisher()
         let combinedPublisher = characters.enumerated().map { index, character in
@@ -125,7 +125,7 @@ class IDCardViewModel {
         }
         return combinedPublisher
     }
-    
+    /// 職業發布員創建
     private func createProfessionPublisers(_ characters: [Character]) -> AnyPublisher<[String], Never> {
         let initialPublisher = Just<[String]>([]).eraseToAnyPublisher()
         let combinedPublisher = characters.enumerated().map { index, character in
