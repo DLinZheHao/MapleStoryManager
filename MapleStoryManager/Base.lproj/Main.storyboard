@@ -183,17 +183,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBn-gM-9nx">
+                                <rect key="frame" x="0.0" y="768" width="393" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fhE-ZD-dIq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="確認">
+                                    <color key="titleColor" systemColor="systemGray6Color"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BjS-RG-9qr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="BjS-RG-9qr" firstAttribute="trailing" secondItem="wBn-gM-9nx" secondAttribute="trailing" id="5SU-Aa-0IB"/>
                             <constraint firstItem="BjS-RG-9qr" firstAttribute="trailing" secondItem="WuS-1s-ENx" secondAttribute="trailing" id="ALq-OV-8wn"/>
+                            <constraint firstItem="wBn-gM-9nx" firstAttribute="leading" secondItem="BjS-RG-9qr" secondAttribute="leading" id="SoY-Am-PYk"/>
                             <constraint firstItem="WuS-1s-ENx" firstAttribute="leading" secondItem="BjS-RG-9qr" secondAttribute="leading" id="hlj-jU-uqO"/>
+                            <constraint firstItem="BjS-RG-9qr" firstAttribute="bottom" secondItem="wBn-gM-9nx" secondAttribute="bottom" id="ijC-Fc-0Gx"/>
                             <constraint firstItem="WuS-1s-ENx" firstAttribute="top" secondItem="BjS-RG-9qr" secondAttribute="top" id="rpl-2k-mmP"/>
                             <constraint firstItem="BjS-RG-9qr" firstAttribute="bottom" secondItem="WuS-1s-ENx" secondAttribute="bottom" id="t3e-EI-m8r"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmBtn" destination="wBn-gM-9nx" id="D0N-cL-4iI"/>
                         <outlet property="inputInfoTableView" destination="WuS-1s-ENx" id="vlW-dh-rDG"/>
                     </connections>
                 </viewController>
@@ -286,6 +302,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

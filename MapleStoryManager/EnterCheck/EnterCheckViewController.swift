@@ -9,14 +9,16 @@
 // 不需要 reload data 如果 Viewmodel 裡的 data 都有正確更新，那 cell 重新解包的時候，會直接拿資料包裡的資料
 // 檢查角色名稱有沒有重複
 // 檢查角色職業有沒有重複
+// 檢查資訊都有輸入且沒有重複，確認送出按鍵就變色、可以點擊
 
 import UIKit
 import Combine
 
 class EnterCheckViewController: UIViewController {
-
+    /// 輸入資訊的 tableView
     @IBOutlet weak var inputInfoTableView: UITableView!
-    
+    /// 確認送出按鍵
+    @IBOutlet weak var confirmBtn: UIButton!
     /// 儲存角色輸入資料用
     private var viewModel = IDCardViewModel()
     
@@ -32,7 +34,23 @@ class EnterCheckViewController: UIViewController {
         let vc = controller as! EnterCheckViewController
         return vc
     }
-
+    // MARK: - 綁定
+    /// 綁定確認按鈕
+    private func configConfirmBtn() {
+        confirmButton
+            .buttonPublisher(for: .touchUpInside)
+            .drive(with: self) { vc, _ in
+                vc.viewModel.psgCellVMs.forEach { $0.fieldErrSwitch.setAllTrue() }
+                // 判斷是否有錯誤旅客，有則滾到此旅客
+                if let index = vc.viewModel.psgCellVMs.firstIndex(where: { !$0.fieldErr.isAllEmpty }) {
+                    vc.scrollToFirstErr(at: index)
+                } else {
+                    let inputs = vc.viewModel.psgCellVMs.map { $0.userInput }
+                    vc.resultClosure?(inputs)
+                }
+            }
+            .store(in: &viewModel.cancellables)
+    }
 }
 
 extension EnterCheckViewController: UITableViewDataSource, UITableViewDelegate {
