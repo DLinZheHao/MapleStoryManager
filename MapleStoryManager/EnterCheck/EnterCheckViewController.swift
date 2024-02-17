@@ -22,10 +22,13 @@ class EnterCheckViewController: UIViewController {
     /// 儲存角色輸入資料用
     private var viewModel = IDCardViewModel()
     
+    private var cancellables = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         inputInfoTableView.delegate = self
         inputInfoTableView.dataSource = self
+        configConfirmBtn()
     }
     
     @objc static func fromSB() -> EnterCheckViewController {
@@ -37,25 +40,38 @@ class EnterCheckViewController: UIViewController {
     // MARK: - 綁定
     /// 綁定確認按鈕
     private func configConfirmBtn() {
-        confirmButton
+        confirmBtn
             .buttonPublisher(for: .touchUpInside)
-            .drive(with: self) { vc, _ in
-                vc.viewModel.psgCellVMs.forEach { $0.fieldErrSwitch.setAllTrue() }
-                // 判斷是否有錯誤旅客，有則滾到此旅客
-                if let index = vc.viewModel.psgCellVMs.firstIndex(where: { !$0.fieldErr.isAllEmpty }) {
-                    vc.scrollToFirstErr(at: index)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                
+                var pass = true
+                
+                self.viewModel.characters.forEach { character in
+                    if character.name.isEmpty || character.profession.isEmpty {
+                        pass = false
+                    }
+                }
+                
+                self.viewModel.checkResults.forEach { result in
+                    if result.name || result.profession {
+                        pass = false
+                    }
+                }
+                
+                if pass {
+                    print("成功")
                 } else {
-                    let inputs = vc.viewModel.psgCellVMs.map { $0.userInput }
-                    vc.resultClosure?(inputs)
+                    print("失敗")
                 }
             }
-            .store(in: &viewModel.cancellables)
+            .store(in: &cancellables)
     }
 }
 
 extension EnterCheckViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,9 +93,9 @@ class IDCardViewModel {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        characters = (0..<10).map { _ in Character() } // 假定有１０個角色輸入
+        characters = (0..<3).map { _ in Character() } // 假定有１０個角色輸入
         // 初始化检查结果数组，假设初始时没有错误
-        checkResults = Array(repeating: CheckDuplicate(name: false, profession: false), count: 10)
+        checkResults = Array(repeating: CheckDuplicate(name: false, profession: false), count: 3)
         
         let namePublisers = createNamePublishers(characters)
         let professionPublishers = createProfessionPublisers(characters)

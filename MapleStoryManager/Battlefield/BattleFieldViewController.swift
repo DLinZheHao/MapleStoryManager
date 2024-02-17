@@ -114,60 +114,6 @@ extension BattleFieldViewController: UITableViewDelegate, UITableViewDataSource 
     
 }
 
-extension UITextField {
-
-    var textPublisher: AnyPublisher<String, Never> {
-        NotificationCenter.default.publisher(
-            for: UITextField.textDidChangeNotification,
-            object: self
-        )
-        .compactMap { ($0.object as? UITextField)?.text }
-        .eraseToAnyPublisher()
-    }
-
-}
-
-extension Publisher where Output == String, Failure == Never {
-    /// 純回傳 field, value
-    func inputPublisher<Field>(for field: Field, errorHandler: @escaping (String, Field) -> AnyPublisher<String, Never>) -> InputPublisher<Self, Field> {
-        return InputPublisher(self, field: field, errorHandler: errorHandler)
-    }
-    
-    /// 讓外部可以給 self, 回傳 self, field, value
-    func inputPublisher<Context: AnyObject, Field>(with context: Context, for field: Field, errorHandler: @escaping (Context, String, Field) -> AnyPublisher<String, Never>) -> InputPublisher<Self, Field> {
-        return InputPublisher(self, field: field, errorHandler: { [weak context] value, field in
-            guard let context = context else { return Empty().eraseToAnyPublisher() }
-            return errorHandler(context, value, field)
-        })
-    }
-}
-
-struct InputPublisher<Upstream: Publisher, Field>: Publisher where Upstream.Output == String, Upstream.Failure == Never {
-    typealias Output = String
-    typealias Failure = Never
-
-    private let upstream: Upstream
-    private let field: Field
-    private let errorHandler: (String, Field) -> AnyPublisher<String, Never>
-
-    init(_ upstream: Upstream, field: Field, errorHandler: @escaping (String, Field) -> AnyPublisher<String, Never>) {
-        self.upstream = upstream
-        self.field = field
-        self.errorHandler = errorHandler
-    }
-
-    func receive<S: Subscriber>(subscriber: S) where S.Input == String, S.Failure == Never {
-        upstream
-            .flatMap { [field, errorHandler] value in
-                errorHandler(value, field)
-            }
-            .subscribe(subscriber)
-    }
-}
-
-
-
-
 //extension Publisher where Output == String, Failure == Never {
 //    func customPublisher<Field>(field: Field) -> CustomPublisher<Self, Field>{
 //        let publisher = CustomPublisher(self, field: field)

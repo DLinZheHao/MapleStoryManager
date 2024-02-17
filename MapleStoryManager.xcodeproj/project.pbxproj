@@ -23,9 +23,14 @@
 		05ED603C2B68D23C006A53F0 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED603B2B68D23C006A53F0 /* GameService.swift */; };
 		05ED60422B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60412B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift */; };
 		05ED60442B68DBCE006A53F0 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60432B68DBCE006A53F0 /* UITableViewExtension.swift */; };
+		05F87AB12B8063E300D23DF7 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F87AB02B8063E300D23DF7 /* UIButtonExtension.swift */; };
+		05F87AB32B8063F300D23DF7 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F87AB22B8063F300D23DF7 /* UITextFieldExtension.swift */; };
+		05F87AB52B80644C00D23DF7 /* CustomPublishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F87AB42B80644C00D23DF7 /* CustomPublishers.swift */; };
+		39CF9FDC050B2B21FD7686A8 /* Pods_MapleStoryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04CAA25E8E5DAAA993BC7F9 /* Pods_MapleStoryManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		055FC2AA7106D10296CE75EA /* Pods-MapleStoryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapleStoryManager.release.xcconfig"; path = "Target Support Files/Pods-MapleStoryManager/Pods-MapleStoryManager.release.xcconfig"; sourceTree = "<group>"; };
 		05A9B13C2B69F1D7002BE376 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		05B886AF2B6B220F00620199 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		05B886B32B6B272700620199 /* LobbyFunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyFunctionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -44,6 +49,11 @@
 		05ED603B2B68D23C006A53F0 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		05ED60412B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlefieldInfoTableViewCell.swift; sourceTree = "<group>"; };
 		05ED60432B68DBCE006A53F0 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		05F87AB02B8063E300D23DF7 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		05F87AB22B8063F300D23DF7 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		05F87AB42B80644C00D23DF7 /* CustomPublishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPublishers.swift; sourceTree = "<group>"; };
+		A05854A1500308DEE808EBBF /* Pods-MapleStoryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapleStoryManager.debug.xcconfig"; path = "Target Support Files/Pods-MapleStoryManager/Pods-MapleStoryManager.debug.xcconfig"; sourceTree = "<group>"; };
+		F04CAA25E8E5DAAA993BC7F9 /* Pods_MapleStoryManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapleStoryManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39CF9FDC050B2B21FD7686A8 /* Pods_MapleStoryManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +142,8 @@
 			children = (
 				05ED601B2B634D57006A53F0 /* MapleStoryManager */,
 				05ED601A2B634D57006A53F0 /* Products */,
+				F5EA31168E3BE2CBEA966E22 /* Pods */,
+				403700B82D8C05BBF56DA382 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +158,7 @@
 		05ED601B2B634D57006A53F0 /* MapleStoryManager */ = {
 			isa = PBXGroup;
 			children = (
+				05F87AAF2B8063C400D23DF7 /* CombineExtension */,
 				05A9B13B2B69E753002BE376 /* Extension */,
 				05B886B12B6B26FA00620199 /* Lobby */,
 				05A9B1382B69E717002BE376 /* Battlefield */,
@@ -161,6 +175,34 @@
 			path = MapleStoryManager;
 			sourceTree = "<group>";
 		};
+		05F87AAF2B8063C400D23DF7 /* CombineExtension */ = {
+			isa = PBXGroup;
+			children = (
+				05F87AB02B8063E300D23DF7 /* UIButtonExtension.swift */,
+				05F87AB22B8063F300D23DF7 /* UITextFieldExtension.swift */,
+				05F87AB42B80644C00D23DF7 /* CustomPublishers.swift */,
+			);
+			path = CombineExtension;
+			sourceTree = "<group>";
+		};
+		403700B82D8C05BBF56DA382 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F04CAA25E8E5DAAA993BC7F9 /* Pods_MapleStoryManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5EA31168E3BE2CBEA966E22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A05854A1500308DEE808EBBF /* Pods-MapleStoryManager.debug.xcconfig */,
+				055FC2AA7106D10296CE75EA /* Pods-MapleStoryManager.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05ED602D2B634D58006A53F0 /* Build configuration list for PBXNativeTarget "MapleStoryManager" */;
 			buildPhases = (
+				49DF42C2AA60DBA13C1ADAC3 /* [CP] Check Pods Manifest.lock */,
 				05ED60152B634D57006A53F0 /* Sources */,
 				05ED60162B634D57006A53F0 /* Frameworks */,
 				05ED60172B634D57006A53F0 /* Resources */,
+				6DBB783E612091035D9A57F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +271,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		49DF42C2AA60DBA13C1ADAC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MapleStoryManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DBB783E612091035D9A57F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapleStoryManager/Pods-MapleStoryManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapleStoryManager/Pods-MapleStoryManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapleStoryManager/Pods-MapleStoryManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		05ED60152B634D57006A53F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -242,7 +328,10 @@
 				05ED601D2B634D57006A53F0 /* AppDelegate.swift in Sources */,
 				05A9B13D2B69F1D7002BE376 /* UILabelExtension.swift in Sources */,
 				05ED601F2B634D57006A53F0 /* SceneDelegate.swift in Sources */,
+				05F87AB32B8063F300D23DF7 /* UITextFieldExtension.swift in Sources */,
 				05B886B02B6B220F00620199 /* LobbyViewController.swift in Sources */,
+				05F87AB12B8063E300D23DF7 /* UIButtonExtension.swift in Sources */,
+				05F87AB52B80644C00D23DF7 /* CustomPublishers.swift in Sources */,
 				05ED60322B68CFFE006A53F0 /* GameInfo.xcdatamodeld in Sources */,
 				05ED60442B68DBCE006A53F0 /* UITableViewExtension.swift in Sources */,
 			);
@@ -386,6 +475,7 @@
 		};
 		05ED602E2B634D58006A53F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A05854A1500308DEE808EBBF /* Pods-MapleStoryManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -415,6 +505,7 @@
 		};
 		05ED602F2B634D58006A53F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 055FC2AA7106D10296CE75EA /* Pods-MapleStoryManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
