@@ -73,7 +73,7 @@ class BattleFieldViewController: UIViewController {
         headerView.backgroundColor = .white
         
         let addButton = UIButton()
-        addButton.setImage(UIImage(named: "plus"), for: .normal)
+        addButton.setImage(UIImage(systemName: "plus"), for: .normal)
         addButton.addTarget(self, action: #selector(addBtnTapped), for: .touchUpInside)
         headerView.addSubview(addButton)
         addButton.translatesAutoresizingMaskIntoConstraints = false
