@@ -29,6 +29,7 @@ class EnterCheckViewController: UIViewController {
         inputInfoTableView.delegate = self
         inputInfoTableView.dataSource = self
         configConfirmBtn()
+        bgConfigConfirBtn()
     }
     
     @objc static func fromSB() -> EnterCheckViewController {
@@ -67,6 +68,39 @@ class EnterCheckViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
+    
+    private func bgConfigConfirBtn() {
+        
+        let conbinePublisher = viewModel.$checkResults.combineLatest(
+            IDCardViewModel.createNamePublishers(viewModel.characters),
+            IDCardViewModel.createProfessionPublisers(viewModel.characters))
+        
+        conbinePublisher
+            .map { firstArray, secondArray, thirdArray in
+                let combinedArray = firstArray.enumerated().map { (index, element1) in
+                    (element1, secondArray[index], thirdArray[index])
+                }
+                return combinedArray.map { result, names, professions in (result, names, professions)}
+            }
+            .eraseToAnyPublisher() // 转换为 AnyPublisher
+            .sink { [weak self] info in
+                guard let self = self else { return }
+                var pass = true
+                info.forEach { (result, names, professions) in
+                    if result.name || result.profession || names.isEmpty || professions.isEmpty {
+                        pass = false
+                    }
+                }
+
+                if pass {
+                    self.confirmBtn.backgroundColor = .green
+                } else {
+                    self.confirmBtn.backgroundColor = .gray
+                }
+            }
+            .store(in: &cancellables)
+    }
+
 }
 
 extension EnterCheckViewController: UITableViewDataSource, UITableViewDelegate {
@@ -97,8 +131,8 @@ class IDCardViewModel {
         // 初始化检查结果数组，假设初始时没有错误
         checkResults = Array(repeating: CheckDuplicate(name: false, profession: false), count: 3)
         
-        let namePublisers = createNamePublishers(characters)
-        let professionPublishers = createProfessionPublisers(characters)
+        let namePublisers = IDCardViewModel.createNamePublishers(characters)
+        let professionPublishers = IDCardViewModel.createProfessionPublisers(characters)
         
         let combinedPublisher = namePublisers.combineLatest(professionPublishers)
             .map { firstArray, secondArray in
@@ -146,7 +180,7 @@ class IDCardViewModel {
         errorsPublisher.send(checkResults)
     }
     /// 名稱發布員創建
-    private func createNamePublishers(_ characters: [Character]) -> AnyPublisher<[String], Never> {
+    static func createNamePublishers(_ characters: [Character]) -> AnyPublisher<[String], Never> {
         let initialPublisher = Just<[String]>([]).eraseToAnyPublisher()
         let combinedPublisher = characters.enumerated().map { index, character in
             character.$name
@@ -160,7 +194,7 @@ class IDCardViewModel {
         return combinedPublisher
     }
     /// 職業發布員創建
-    private func createProfessionPublisers(_ characters: [Character]) -> AnyPublisher<[String], Never> {
+    static func createProfessionPublisers(_ characters: [Character]) -> AnyPublisher<[String], Never> {
         let initialPublisher = Just<[String]>([]).eraseToAnyPublisher()
         let combinedPublisher = characters.enumerated().map { index, character in
             character.$profession
