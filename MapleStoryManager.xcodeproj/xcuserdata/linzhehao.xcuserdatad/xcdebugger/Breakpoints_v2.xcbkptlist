@@ -167,54 +167,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "68A97A09-E23E-4F48-B2E6-3099CE5869EE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "checkForDuplicates(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "68A97A09-E23E-4F48-B2E6-3099CE5869EE - 3fcc20e60d579c09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MapleStoryManager.IDCardViewModel.checkForDuplicates(Swift.Array&lt;(Swift.Int, Swift.String, Swift.String)&gt;) -&gt; ()"
-                  moduleName = "MapleStoryManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  uuid = "68A97A09-E23E-4F48-B2E6-3099CE5869EE - 7f96c8d594827b90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int, Swift.String, Swift.String) -&gt; (Swift.Int, Swift.String) in MapleStoryManager.IDCardViewModel.checkForDuplicates(Swift.Array&lt;(Swift.Int, Swift.String, Swift.String)&gt;) -&gt; ()"
-                  moduleName = "MapleStoryManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D5D69308-7639-4C7B-ABFA-3495B7F760D7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -222,26 +174,10 @@
             filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55423CDD-044E-4754-8C3C-75AD98FA4DCC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "IDCardViewModel"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -63,7 +63,7 @@ extension LobbyViewController: UICollectionViewDelegate {
                 let battlefieldVc = BattleFieldViewController.fromSB()
                 self.navigationController?.pushViewController(battlefieldVc, animated: true)
             } else if item.name == "驗證輸入" {
-                let enterCheckVc = EnterCheckViewController.fromSB()
+                let enterCheckVc = EnterCheckViewController.fromSB(charactersNum: 2)
                 self.navigationController?.pushViewController(enterCheckVc, animated: true)
             }
                    

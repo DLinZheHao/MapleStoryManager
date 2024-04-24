@@ -13,6 +13,7 @@
 		05B886B62B6B28FD00620199 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B52B6B28FD00620199 /* UICollectionViewExtension.swift */; };
 		05B886B92B6B3D4600620199 /* EnterCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B82B6B3D4600620199 /* EnterCheckViewController.swift */; };
 		05B886BC2B6B403700620199 /* InputInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BB2B6B403700620199 /* InputInfoTableViewCell.swift */; };
+		05CBEFEC2BD79A3A00DAE8A7 /* IDCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBEFEB2BD79A3A00DAE8A7 /* IDCardViewModel.swift */; };
 		05ED601D2B634D57006A53F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED601C2B634D57006A53F0 /* AppDelegate.swift */; };
 		05ED601F2B634D57006A53F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED601E2B634D57006A53F0 /* SceneDelegate.swift */; };
 		05ED60212B634D57006A53F0 /* BattleFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60202B634D57006A53F0 /* BattleFieldViewController.swift */; };
@@ -37,6 +38,7 @@
 		05B886B52B6B28FD00620199 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		05B886B82B6B3D4600620199 /* EnterCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCheckViewController.swift; sourceTree = "<group>"; };
 		05B886BB2B6B403700620199 /* InputInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputInfoTableViewCell.swift; sourceTree = "<group>"; };
+		05CBEFEB2BD79A3A00DAE8A7 /* IDCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardViewModel.swift; sourceTree = "<group>"; };
 		05ED60192B634D57006A53F0 /* MapleStoryManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapleStoryManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED601C2B634D57006A53F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED601E2B634D57006A53F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		05B886B72B6B3CC800620199 /* EnterCheck */ = {
 			isa = PBXGroup;
 			children = (
+				05CBEFEA2BD79A2C00DAE8A7 /* ViewModel */,
 				05B886BA2B6B3EC200620199 /* View */,
 				05B886B82B6B3D4600620199 /* EnterCheckViewController.swift */,
 			);
@@ -135,6 +138,14 @@
 				05B886BB2B6B403700620199 /* InputInfoTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		05CBEFEA2BD79A2C00DAE8A7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				05CBEFEB2BD79A3A00DAE8A7 /* IDCardViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		05ED60102B634D57006A53F0 = {
@@ -199,7 +210,6 @@
 				A05854A1500308DEE808EBBF /* Pods-MapleStoryManager.debug.xcconfig */,
 				055FC2AA7106D10296CE75EA /* Pods-MapleStoryManager.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -322,6 +332,7 @@
 				05B886BC2B6B403700620199 /* InputInfoTableViewCell.swift in Sources */,
 				05B886B62B6B28FD00620199 /* UICollectionViewExtension.swift in Sources */,
 				05ED60212B634D57006A53F0 /* BattleFieldViewController.swift in Sources */,
+				05CBEFEC2BD79A3A00DAE8A7 /* IDCardViewModel.swift in Sources */,
 				05B886B42B6B272700620199 /* LobbyFunctionCollectionViewCell.swift in Sources */,
 				05ED603C2B68D23C006A53F0 /* GameService.swift in Sources */,
 				05ED60422B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift in Sources */,

@@ -7,15 +7,284 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A47A1464-82E5-49A9-8287-18E7A4E50458"
+            uuid = "6E8D9814-3FEB-419A-B60F-070B23255072"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83FBAC8F-07EF-4B42-B816-50E807601857"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "configConfirmBtn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "181E9D4B-B261-47DC-87AD-A3D3077C8B7D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEFC6666-A4AD-45D7-A693-AA671949CAB0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "configConfirmBtn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A95DED4F-C6F1-4FE6-8B68-A626C36080FC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "configConfirmBtn()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A95DED4F-C6F1-4FE6-8B68-A626C36080FC - 36aa65679c42cd72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (MapleStoryManager.EnterCheckViewController, (Swift.Array&lt;MapleStoryManager.CheckDuplicate&gt;, Swift.Array&lt;MapleStoryManager.Character&gt;)) -&gt; () in MapleStoryManager.EnterCheckViewController.configConfirmBtn() -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "A95DED4F-C6F1-4FE6-8B68-A626C36080FC - 4c755eded9d5cabe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;MapleStoryManager.CheckDuplicate&gt;, Swift.Array&lt;MapleStoryManager.Character&gt;) -&gt; () in MapleStoryManager.EnterCheckViewController.configConfirmBtn() -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "A95DED4F-C6F1-4FE6-8B68-A626C36080FC - bcc5c19ce729cca7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;MapleStoryManager.Character&gt;, Swift.Array&lt;MapleStoryManager.CheckDuplicate&gt;) -&gt; () in MapleStoryManager.EnterCheckViewController.configConfirmBtn() -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C6DBE90-98F7-409F-A23F-48D851DCE837"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "configConfirmBtn()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8C6DBE90-98F7-409F-A23F-48D851DCE837 - 4c755eded9d5ca7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;MapleStoryManager.CheckDuplicate&gt;, Swift.Array&lt;MapleStoryManager.Character&gt;) -&gt; () in MapleStoryManager.EnterCheckViewController.configConfirmBtn() -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "8C6DBE90-98F7-409F-A23F-48D851DCE837 - cb40f8a4e75fe57b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MapleStoryManager.Character) -&gt; () in closure #1 (Swift.Array&lt;MapleStoryManager.CheckDuplicate&gt;, Swift.Array&lt;MapleStoryManager.Character&gt;) -&gt; () in MapleStoryManager.EnterCheckViewController.configConfirmBtn() -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "8C6DBE90-98F7-409F-A23F-48D851DCE837 - bcc5c19ce729cc65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;MapleStoryManager.Character&gt;, Swift.Array&lt;MapleStoryManager.CheckDuplicate&gt;) -&gt; () in MapleStoryManager.EnterCheckViewController.configConfirmBtn() -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "8C6DBE90-98F7-409F-A23F-48D851DCE837 - ae2c17be62851c6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MapleStoryManager.Character) -&gt; () in closure #1 (Swift.Array&lt;MapleStoryManager.Character&gt;, Swift.Array&lt;MapleStoryManager.CheckDuplicate&gt;) -&gt; () in MapleStoryManager.EnterCheckViewController.configConfirmBtn() -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DC28ED4-AB05-4990-B7FA-03F9F5FB71DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/EnterCheck/View/InputInfoTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "setupBindings(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4DC28ED4-AB05-4990-B7FA-03F9F5FB71DC - 6426ed264ab5d18d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.InputInfoTableViewCell.setupBindings(MapleStoryManager.IDCardViewModel) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/View/InputInfoTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "3176">
+               </Location>
+               <Location
+                  uuid = "4DC28ED4-AB05-4990-B7FA-03F9F5FB71DC - 1ed2532c5661d8f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 (Swift.String) -&gt; Swift.Optional&lt;Swift.String&gt; in MapleStoryManager.InputInfoTableViewCell.setupBindings(MapleStoryManager.IDCardViewModel) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/EnterCheck/View/InputInfoTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16784534-EA56-46A8-8B95-EB260B051666"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "configConfirmBtn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57C9135D-0643-40AA-BC5D-1081464D4029"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/EnterCheck/EnterCheckViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "configConfirmBtn()"
             landmarkType = "7">
          </BreakpointContent>

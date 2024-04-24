@@ -12,7 +12,6 @@
 // 檢查資訊都有輸入且沒有重複，確認送出按鍵就變色、可以點擊
 
 import UIKit
-import Combine
 
 class EnterCheckViewController: UIViewController {
     /// 輸入資訊的 tableView
@@ -22,213 +21,74 @@ class EnterCheckViewController: UIViewController {
     /// 儲存角色輸入資料用
     private var viewModel = IDCardViewModel()
     
-    private var cancellables = Set<AnyCancellable>()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         inputInfoTableView.delegate = self
         inputInfoTableView.dataSource = self
         configConfirmBtn()
-        bgConfigConfirBtn()
     }
     
-    @objc static func fromSB() -> EnterCheckViewController {
+    @objc static func fromSB(charactersNum: Int) -> EnterCheckViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "EnterCheckViewController")
         let vc = controller as! EnterCheckViewController
+        vc.viewModel.setup(charactersNum)
         return vc
     }
+    
     // MARK: - 綁定
+    
     /// 綁定確認按鈕
     private func configConfirmBtn() {
-        confirmBtn
-            .buttonPublisher(for: .touchUpInside)
-            .sink { [weak self] _ in
+        
+        let combinePublisher = viewModel.$characters.combineLatest(viewModel.$checkResults)
+        
+        /// textPublisher 算是介面輸入資訊，需要在主要線程上獲取才能拿到最新資訊
+        combinePublisher.receive(on: DispatchQueue.main)
+            .sink { [weak self] characters, checkResult  in
                 guard let self = self else { return }
-                
                 var pass = true
-                
-                self.viewModel.characters.forEach { character in
+                /// 檢查角色資料是否有少輸入
+                characters.forEach { character in
                     if character.name.isEmpty || character.profession.isEmpty {
                         pass = false
                     }
                 }
-                
-                self.viewModel.checkResults.forEach { result in
+                /// 檢查名稱與職業是否有重複
+                checkResult.forEach { result in
                     if result.name || result.profession {
                         pass = false
                     }
                 }
-                
-                if pass {
-                    print("成功")
-                } else {
-                    print("失敗")
-                }
+                self.viewModel.comfirmBtnEnable.send(pass)
             }
-            .store(in: &cancellables)
-    }
-    
-    private func bgConfigConfirBtn() {
+            .store(in: &viewModel.cancellables)
         
-        let conbinePublisher = viewModel.$checkResults.combineLatest(
-            IDCardViewModel.createNamePublishers(viewModel.characters),
-            IDCardViewModel.createProfessionPublisers(viewModel.characters))
-        
-        conbinePublisher
-            .map { firstArray, secondArray, thirdArray in
-                let combinedArray = firstArray.enumerated().map { (index, element1) in
-                    (element1, secondArray[index], thirdArray[index])
-                }
-                return combinedArray.map { result, names, professions in (result, names, professions)}
-            }
-            .eraseToAnyPublisher() // 转换为 AnyPublisher
-            .sink { [weak self] info in
-                guard let self = self else { return }
-                var pass = true
-                info.forEach { (result, names, professions) in
-                    if result.name || result.profession || names.isEmpty || professions.isEmpty {
-                        pass = false
-                    }
-                }
-
-                if pass {
-                    self.confirmBtn.backgroundColor = .green
-                } else {
-                    self.confirmBtn.backgroundColor = .gray
-                }
-            }
-            .store(in: &cancellables)
+        viewModel.comfirmBtnEnable
+            .map { $0 }
+            .weakSink(with: self, onNext: { vc, enable in
+                vc.confirmBtn.isEnabled = enable
+                vc.confirmBtn.backgroundColor = enable ? .green : .gray
+            })
+            .store(in: &viewModel.cancellables)
     }
-
 }
 
+// MARK: UITableViewDelegate
 extension EnterCheckViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: InputInfoTableViewCell.identifier, for: indexPath)
         guard let inputCell = cell as? InputInfoTableViewCell else { return cell }
+        inputCell.selectionStyle = .none
         inputCell.cellIndex = indexPath.row
         inputCell.setupBindings(viewModel)
         return inputCell
     }
 }
-
-class IDCardViewModel {
-    // 存储角色信息的数组
-    var characters: [Character] = []
-    // 儲存驗證錯誤狀態
-    @Published var checkResults: [CheckDuplicate] = []
-    
-    var errorsPublisher = PassthroughSubject<[CheckDuplicate], Never>()
-    private var cancellables = Set<AnyCancellable>()
-    
-    init() {
-        characters = (0..<3).map { _ in Character() } // 假定有１０個角色輸入
-        // 初始化检查结果数组，假设初始时没有错误
-        checkResults = Array(repeating: CheckDuplicate(name: false, profession: false), count: 3)
-        
-        let namePublisers = IDCardViewModel.createNamePublishers(characters)
-        let professionPublishers = IDCardViewModel.createProfessionPublisers(characters)
-        
-        let combinedPublisher = namePublisers.combineLatest(professionPublishers)
-            .map { firstArray, secondArray in
-                let combinedArray = firstArray.enumerated().map { (index, element1) in
-                    (index, element1, secondArray[index])
-                }
-                return combinedArray.map { index, names, professions in (index, names, professions)}
-            }
-            .eraseToAnyPublisher() // 转换为 AnyPublisher
-        
-        combinedPublisher
-            .sink { [weak self] info in
-                self?.checkForDuplicates(info)
-            }
-            .store(in: &cancellables)
-
-    }
-
-    private func checkForDuplicates(_ combinedInfo: [(Int, String, String)]) {
-        // 提取名称和职业列表
-        let namesWithIndex = combinedInfo.map { (index, name, _) in return (index, name) } // (Index, Name)
-        let professionsWithIndex = combinedInfo.map { (index, _, profession) in return (index, profession) } // (Index, Profession)
-
-        // 检查名称重复
-        for (index, name) in namesWithIndex {
-            let duplicateNamesCount = namesWithIndex.filter { $1 == name && !$1.isEmpty }.count
-            if duplicateNamesCount > 1 {
-                checkResults[index].name = true
-            } else {
-                checkResults[index].name = false
-            }
-        }
-
-        // 检查职业重复
-        for (index, profession) in professionsWithIndex {
-            let duplicateProfessionsCount = professionsWithIndex.filter { $1 == profession && !$1.isEmpty }.count
-            if duplicateProfessionsCount > 1 {
-                checkResults[index].profession = true
-            } else {
-                checkResults[index].profession = false
-            }
-        }
-        
-        // 发送更新的错误状态
-        errorsPublisher.send(checkResults)
-    }
-    /// 名稱發布員創建
-    static func createNamePublishers(_ characters: [Character]) -> AnyPublisher<[String], Never> {
-        let initialPublisher = Just<[String]>([]).eraseToAnyPublisher()
-        let combinedPublisher = characters.enumerated().map { index, character in
-            character.$name
-                .map{ $0 }
-                .eraseToAnyPublisher()
-        }.reduce(initialPublisher) { combined, publisher in
-            combined
-                .combineLatest(publisher) { $0 + [$1] }
-                .eraseToAnyPublisher()
-        }
-        return combinedPublisher
-    }
-    /// 職業發布員創建
-    static func createProfessionPublisers(_ characters: [Character]) -> AnyPublisher<[String], Never> {
-        let initialPublisher = Just<[String]>([]).eraseToAnyPublisher()
-        let combinedPublisher = characters.enumerated().map { index, character in
-            character.$profession
-                .map{ $0 }
-                .eraseToAnyPublisher()
-        }.reduce(initialPublisher) { combined, publisher in
-            combined
-                .combineLatest(publisher) { $0 + [$1] }
-                .eraseToAnyPublisher()
-        }
-        return combinedPublisher
-    }
-    // 这个方法可以在用户按下确认按钮时调用
-    func sendData() {
-        // 发送数据的逻辑...
-    }
-}
-
-// 你的角色模型，需要遵守Equatable来比较
-class Character: ObservableObject {
-    @Published var name: String
-    @Published var profession: String
-    
-    init(name: String = "", profession: String = "") {
-        self.name = name
-        self.profession = profession
-    }
-}
-
-struct CheckDuplicate {
-    var name: Bool
-    var profession: Bool
-}
-
 
 //    func addCharacter(name: String, profession: String) {
 //        let newCharacter = Character(name: name, profession: profession)
