@@ -14,6 +14,10 @@
 		05B886B92B6B3D4600620199 /* EnterCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B82B6B3D4600620199 /* EnterCheckViewController.swift */; };
 		05B886BC2B6B403700620199 /* InputInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BB2B6B403700620199 /* InputInfoTableViewCell.swift */; };
 		05CBEFEC2BD79A3A00DAE8A7 /* IDCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBEFEB2BD79A3A00DAE8A7 /* IDCardViewModel.swift */; };
+		05DD3DE72BEC9CE0000ACA79 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD3DE62BEC9CE0000ACA79 /* SwiftUIView.swift */; };
+		05DD3DE92BEDAE42000ACA79 /* SwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD3DE82BEDAE42000ACA79 /* SwiftUIViewController.swift */; };
+		05DD3DEB2BEDB090000ACA79 /* SwiftUIViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DD3DEA2BEDB090000ACA79 /* SwiftUIViewController.storyboard */; };
+		05DD3DEE2BF43DB0000ACA79 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD3DED2BF43DB0000ACA79 /* UIFontExtension.swift */; };
 		05ED601D2B634D57006A53F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED601C2B634D57006A53F0 /* AppDelegate.swift */; };
 		05ED601F2B634D57006A53F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED601E2B634D57006A53F0 /* SceneDelegate.swift */; };
 		05ED60212B634D57006A53F0 /* BattleFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60202B634D57006A53F0 /* BattleFieldViewController.swift */; };
@@ -39,6 +43,10 @@
 		05B886B82B6B3D4600620199 /* EnterCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCheckViewController.swift; sourceTree = "<group>"; };
 		05B886BB2B6B403700620199 /* InputInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputInfoTableViewCell.swift; sourceTree = "<group>"; };
 		05CBEFEB2BD79A3A00DAE8A7 /* IDCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardViewModel.swift; sourceTree = "<group>"; };
+		05DD3DE62BEC9CE0000ACA79 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		05DD3DE82BEDAE42000ACA79 /* SwiftUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewController.swift; sourceTree = "<group>"; };
+		05DD3DEA2BEDB090000ACA79 /* SwiftUIViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwiftUIViewController.storyboard; sourceTree = "<group>"; };
+		05DD3DED2BF43DB0000ACA79 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		05ED60192B634D57006A53F0 /* MapleStoryManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapleStoryManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED601C2B634D57006A53F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED601E2B634D57006A53F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 				05ED60432B68DBCE006A53F0 /* UITableViewExtension.swift */,
 				05A9B13C2B69F1D7002BE376 /* UILabelExtension.swift */,
 				05B886B52B6B28FD00620199 /* UICollectionViewExtension.swift */,
+				05DD3DED2BF43DB0000ACA79 /* UIFontExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -148,6 +157,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		05DD3DE52BEC9CAF000ACA79 /* swiftUIRE */ = {
+			isa = PBXGroup;
+			children = (
+				05DD3DE62BEC9CE0000ACA79 /* SwiftUIView.swift */,
+				05DD3DE82BEDAE42000ACA79 /* SwiftUIViewController.swift */,
+				05DD3DEA2BEDB090000ACA79 /* SwiftUIViewController.storyboard */,
+			);
+			path = swiftUIRE;
+			sourceTree = "<group>";
+		};
 		05ED60102B634D57006A53F0 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +188,7 @@
 		05ED601B2B634D57006A53F0 /* MapleStoryManager */ = {
 			isa = PBXGroup;
 			children = (
+				05DD3DE52BEC9CAF000ACA79 /* swiftUIRE */,
 				05F87AAF2B8063C400D23DF7 /* CombineExtension */,
 				05A9B13B2B69E753002BE376 /* Extension */,
 				05B886B12B6B26FA00620199 /* Lobby */,
@@ -243,7 +263,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					05ED60182B634D57006A53F0 = {
 						CreatedOnToolsVersion = 14.1;
@@ -275,6 +295,7 @@
 			files = (
 				05ED60292B634D58006A53F0 /* LaunchScreen.storyboard in Resources */,
 				05ED60262B634D58006A53F0 /* Assets.xcassets in Resources */,
+				05DD3DEB2BEDB090000ACA79 /* SwiftUIViewController.storyboard in Resources */,
 				05ED60242B634D57006A53F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,14 +351,17 @@
 			files = (
 				05B886B92B6B3D4600620199 /* EnterCheckViewController.swift in Sources */,
 				05B886BC2B6B403700620199 /* InputInfoTableViewCell.swift in Sources */,
+				05DD3DE72BEC9CE0000ACA79 /* SwiftUIView.swift in Sources */,
 				05B886B62B6B28FD00620199 /* UICollectionViewExtension.swift in Sources */,
 				05ED60212B634D57006A53F0 /* BattleFieldViewController.swift in Sources */,
 				05CBEFEC2BD79A3A00DAE8A7 /* IDCardViewModel.swift in Sources */,
+				05DD3DEE2BF43DB0000ACA79 /* UIFontExtension.swift in Sources */,
 				05B886B42B6B272700620199 /* LobbyFunctionCollectionViewCell.swift in Sources */,
 				05ED603C2B68D23C006A53F0 /* GameService.swift in Sources */,
 				05ED60422B68DB7E006A53F0 /* BattlefieldInfoTableViewCell.swift in Sources */,
 				05ED601D2B634D57006A53F0 /* AppDelegate.swift in Sources */,
 				05A9B13D2B69F1D7002BE376 /* UILabelExtension.swift in Sources */,
+				05DD3DE92BEDAE42000ACA79 /* SwiftUIViewController.swift in Sources */,
 				05ED601F2B634D57006A53F0 /* SceneDelegate.swift in Sources */,
 				05F87AB32B8063F300D23DF7 /* UITextFieldExtension.swift in Sources */,
 				05B886B02B6B220F00620199 /* LobbyViewController.swift in Sources */,
@@ -374,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -406,6 +431,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -434,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -466,6 +493,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -493,6 +521,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z64LB69QMK;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapleStoryManager/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -500,7 +529,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,6 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z64LB69QMK;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapleStoryManager/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -530,7 +560,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

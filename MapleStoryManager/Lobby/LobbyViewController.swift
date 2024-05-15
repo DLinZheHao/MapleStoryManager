@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SwiftUI
 class LobbyViewController: UIViewController {
 
     @IBOutlet weak var functionsCollectionView: UICollectionView!
@@ -37,7 +37,8 @@ class LobbyViewController: UIViewController {
         snapshot.appendSections([0])
         
         let items = [FunctionData(name: "新增資料更新"),
-                     FunctionData(name: "驗證輸入")
+                     FunctionData(name: "驗證輸入"),
+                     FunctionData(name: "swiftUI 測試")
         ]
         snapshot.appendItems(items)
         dataSource.apply(snapshot, animatingDifferences: true)
@@ -65,6 +66,11 @@ extension LobbyViewController: UICollectionViewDelegate {
             } else if item.name == "驗證輸入" {
                 let enterCheckVc = EnterCheckViewController.fromSB(charactersNum: 2)
                 self.navigationController?.pushViewController(enterCheckVc, animated: true)
+            } else if item.name == "swiftUI 測試" {
+                let swiftUIView = SwiftUIView()
+                let hostingController = UIHostingController(rootView: swiftUIView)
+//                let swiftuiVC = SwiftUIViewController()
+                self.navigationController?.pushViewController(hostingController, animated: true)
             }
                    
         }
@@ -73,3 +79,4 @@ extension LobbyViewController: UICollectionViewDelegate {
 struct FunctionData: Hashable {
     let name: String
 }
+

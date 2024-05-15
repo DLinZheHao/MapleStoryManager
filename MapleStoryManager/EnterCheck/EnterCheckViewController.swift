@@ -90,6 +90,7 @@ extension EnterCheckViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+
 //    func addCharacter(name: String, profession: String) {
 //        let newCharacter = Character(name: name, profession: profession)
 //        if !self.characters.contains(newCharacter) {
