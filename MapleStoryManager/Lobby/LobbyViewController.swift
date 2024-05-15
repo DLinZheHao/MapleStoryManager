@@ -66,10 +66,9 @@ extension LobbyViewController: UICollectionViewDelegate {
             } else if item.name == "驗證輸入" {
                 let enterCheckVc = EnterCheckViewController.fromSB(charactersNum: 2)
                 self.navigationController?.pushViewController(enterCheckVc, animated: true)
-            } else if item.name == "swiftUI 測試" {
+            } else if item.name == "swiftUI 簡單入門測試畫面" {
                 let swiftUIView = SwiftUIView()
                 let hostingController = UIHostingController(rootView: swiftUIView)
-//                let swiftuiVC = SwiftUIViewController()
                 self.navigationController?.pushViewController(hostingController, animated: true)
             }
                    
