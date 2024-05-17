@@ -4,12 +4,10 @@
 //
 //  Created by LinZheHao on 2024/5/9.
 //
-
+// 這一頁簡單展示如何擺放介面，並且讓 view 可以重複利用
 import SwiftUI
 
 struct SwiftUIView: View {
-    
-    @State var desc = ""
     
     var body: some View {
         VStack {
@@ -56,27 +54,6 @@ struct HelloWorldView: View {
 #Preview {
     SwiftUIView()
 }
-
-// 如果有重複的物件調整風格，隔一單獨開一個調整器出來（以下是範例）
-struct MineTextFieldStyle: TextFieldStyle {
-    func _body(configuration: TextField<_Label>) -> some View {
-        configuration
-            .padding(10)
-            .background(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.blue, lineWidth: 2))
-            .padding(.horizontal)
-    }
-}
-
-
-//struct TextStyle: ViewModifier {
-//    func body(content: Content) -> some View {
-//        return content.
-//            .
-//            .
-//    }
-//}
-
-
 
 struct HeaderView: View {
     var body: some View {
@@ -155,3 +132,23 @@ struct DescPriceView: View {
         }
     }
 }
+
+
+// 如果有重複的物件調整風格，隔一單獨開一個調整器出來（以下是範例）
+struct MineTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<_Label>) -> some View {
+        configuration
+            .padding(10)
+            .background(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.blue, lineWidth: 2))
+            .padding(.horizontal)
+    }
+}
+
+
+//struct TextStyle: ViewModifier {
+//    func body(content: Content) -> some View {
+//        return content.
+//            .
+//            .
+//    }
+//}

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		05A9B13D2B69F1D7002BE376 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A9B13C2B69F1D7002BE376 /* UILabelExtension.swift */; };
+		05B6A8B82BF6EFDB0091DD80 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B6A8B72BF6EFDB0091DD80 /* CounterView.swift */; };
+		05B6A8BB2BF6F7EE0091DD80 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B6A8BA2BF6F7EE0091DD80 /* ListView.swift */; };
+		05B6A8BE2BF6FA550091DD80 /* ListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B6A8BD2BF6FA550091DD80 /* ListDataModel.swift */; };
 		05B886B02B6B220F00620199 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886AF2B6B220F00620199 /* LobbyViewController.swift */; };
 		05B886B42B6B272700620199 /* LobbyFunctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B32B6B272700620199 /* LobbyFunctionCollectionViewCell.swift */; };
 		05B886B62B6B28FD00620199 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B52B6B28FD00620199 /* UICollectionViewExtension.swift */; };
@@ -16,6 +19,10 @@
 		05CBEFEC2BD79A3A00DAE8A7 /* IDCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBEFEB2BD79A3A00DAE8A7 /* IDCardViewModel.swift */; };
 		05DD3DE72BEC9CE0000ACA79 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD3DE62BEC9CE0000ACA79 /* SwiftUIView.swift */; };
 		05DD3DEE2BF43DB0000ACA79 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD3DED2BF43DB0000ACA79 /* UIFontExtension.swift */; };
+		05DD3DF02BF45C16000ACA79 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD3DEF2BF45C16000ACA79 /* CardView.swift */; };
+		05DD3DF22BF4661B000ACA79 /* ScrollContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD3DF12BF4661B000ACA79 /* ScrollContentView.swift */; };
+		05DD3DF72BF48A6B000ACA79 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD3DF62BF48A6B000ACA79 /* ButtonView.swift */; };
+		05DD3DFA2BF58FA8000ACA79 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD3DF92BF58FA8000ACA79 /* StateView.swift */; };
 		05ED601D2B634D57006A53F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED601C2B634D57006A53F0 /* AppDelegate.swift */; };
 		05ED601F2B634D57006A53F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED601E2B634D57006A53F0 /* SceneDelegate.swift */; };
 		05ED60212B634D57006A53F0 /* BattleFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED60202B634D57006A53F0 /* BattleFieldViewController.swift */; };
@@ -35,6 +42,9 @@
 /* Begin PBXFileReference section */
 		055FC2AA7106D10296CE75EA /* Pods-MapleStoryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapleStoryManager.release.xcconfig"; path = "Target Support Files/Pods-MapleStoryManager/Pods-MapleStoryManager.release.xcconfig"; sourceTree = "<group>"; };
 		05A9B13C2B69F1D7002BE376 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		05B6A8B72BF6EFDB0091DD80 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		05B6A8BA2BF6F7EE0091DD80 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		05B6A8BD2BF6FA550091DD80 /* ListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataModel.swift; sourceTree = "<group>"; };
 		05B886AF2B6B220F00620199 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		05B886B32B6B272700620199 /* LobbyFunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyFunctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		05B886B52B6B28FD00620199 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
@@ -43,6 +53,10 @@
 		05CBEFEB2BD79A3A00DAE8A7 /* IDCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCardViewModel.swift; sourceTree = "<group>"; };
 		05DD3DE62BEC9CE0000ACA79 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		05DD3DED2BF43DB0000ACA79 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		05DD3DEF2BF45C16000ACA79 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		05DD3DF12BF4661B000ACA79 /* ScrollContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContentView.swift; sourceTree = "<group>"; };
+		05DD3DF62BF48A6B000ACA79 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		05DD3DF92BF58FA8000ACA79 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		05ED60192B634D57006A53F0 /* MapleStoryManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapleStoryManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED601C2B634D57006A53F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED601E2B634D57006A53F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +124,23 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		05B6A8B92BF6F7D70091DD80 /* ListRe */ = {
+			isa = PBXGroup;
+			children = (
+				05B6A8BC2BF6FA470091DD80 /* ViewModel */,
+				05B6A8BA2BF6F7EE0091DD80 /* ListView.swift */,
+			);
+			path = ListRe;
+			sourceTree = "<group>";
+		};
+		05B6A8BC2BF6FA470091DD80 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				05B6A8BD2BF6FA550091DD80 /* ListDataModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		05B886B12B6B26FA00620199 /* Lobby */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,9 +187,47 @@
 		05DD3DE52BEC9CAF000ACA79 /* swiftUIRE */ = {
 			isa = PBXGroup;
 			children = (
+				05B6A8B92BF6F7D70091DD80 /* ListRe */,
+				05DD3DF82BF58F64000ACA79 /* StateRe */,
+				05DD3DF52BF48A0D000ACA79 /* ButtonRe */,
+				05DD3DF32BF46663000ACA79 /* ScollViewRe */,
 				05DD3DE62BEC9CE0000ACA79 /* SwiftUIView.swift */,
 			);
 			path = swiftUIRE;
+			sourceTree = "<group>";
+		};
+		05DD3DF32BF46663000ACA79 /* ScollViewRe */ = {
+			isa = PBXGroup;
+			children = (
+				05DD3DF42BF46677000ACA79 /* SubViews */,
+				05DD3DF12BF4661B000ACA79 /* ScrollContentView.swift */,
+			);
+			path = ScollViewRe;
+			sourceTree = "<group>";
+		};
+		05DD3DF42BF46677000ACA79 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				05DD3DEF2BF45C16000ACA79 /* CardView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		05DD3DF52BF48A0D000ACA79 /* ButtonRe */ = {
+			isa = PBXGroup;
+			children = (
+				05DD3DF62BF48A6B000ACA79 /* ButtonView.swift */,
+			);
+			path = ButtonRe;
+			sourceTree = "<group>";
+		};
+		05DD3DF82BF58F64000ACA79 /* StateRe */ = {
+			isa = PBXGroup;
+			children = (
+				05DD3DF92BF58FA8000ACA79 /* StateView.swift */,
+				05B6A8B72BF6EFDB0091DD80 /* CounterView.swift */,
+			);
+			path = StateRe;
 			sourceTree = "<group>";
 		};
 		05ED60102B634D57006A53F0 = {
@@ -346,7 +415,10 @@
 				05B886BC2B6B403700620199 /* InputInfoTableViewCell.swift in Sources */,
 				05DD3DE72BEC9CE0000ACA79 /* SwiftUIView.swift in Sources */,
 				05B886B62B6B28FD00620199 /* UICollectionViewExtension.swift in Sources */,
+				05DD3DF22BF4661B000ACA79 /* ScrollContentView.swift in Sources */,
 				05ED60212B634D57006A53F0 /* BattleFieldViewController.swift in Sources */,
+				05DD3DF72BF48A6B000ACA79 /* ButtonView.swift in Sources */,
+				05B6A8BB2BF6F7EE0091DD80 /* ListView.swift in Sources */,
 				05CBEFEC2BD79A3A00DAE8A7 /* IDCardViewModel.swift in Sources */,
 				05DD3DEE2BF43DB0000ACA79 /* UIFontExtension.swift in Sources */,
 				05B886B42B6B272700620199 /* LobbyFunctionCollectionViewCell.swift in Sources */,
@@ -356,11 +428,15 @@
 				05A9B13D2B69F1D7002BE376 /* UILabelExtension.swift in Sources */,
 				05ED601F2B634D57006A53F0 /* SceneDelegate.swift in Sources */,
 				05F87AB32B8063F300D23DF7 /* UITextFieldExtension.swift in Sources */,
+				05DD3DF02BF45C16000ACA79 /* CardView.swift in Sources */,
 				05B886B02B6B220F00620199 /* LobbyViewController.swift in Sources */,
 				05F87AB12B8063E300D23DF7 /* UIButtonExtension.swift in Sources */,
+				05DD3DFA2BF58FA8000ACA79 /* StateView.swift in Sources */,
+				05B6A8BE2BF6FA550091DD80 /* ListDataModel.swift in Sources */,
 				05F87AB52B80644C00D23DF7 /* CustomPublishers.swift in Sources */,
 				05ED60322B68CFFE006A53F0 /* GameInfo.xcdatamodeld in Sources */,
 				05ED60442B68DBCE006A53F0 /* UITableViewExtension.swift in Sources */,
+				05B6A8B82BF6EFDB0091DD80 /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
