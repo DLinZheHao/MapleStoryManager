@@ -44,57 +44,55 @@ class InputInfoTableViewCell: UITableViewCell {
         guard let cellIndex = cellIndex else { return }
         characterNumLabel.text = "角色\(cellIndex + 1)"
         
-        let character = viewModel.characters[cellIndex]
-        character.$name
-            .compactMap { $0 }
-            .assign(to: \.text, on: nameTextField)
-            .store(in: &cancellables)
-        character.$profession
-            .compactMap { $0 }
-            .assign(to: \.text, on: professionTextField)
-            .store(in: &cancellables)
-
-        viewModel.$checkResults
-            .compactMap { result in
-                result.map { $0 }
-            }
-            .sink { [weak self] checkDuplicate in
-                guard let self = self else { return }
-                self.nameNoticeLabel.isHidden = !checkDuplicate[cellIndex].name
-                self.nameNoticeLabel.text = checkDuplicate[cellIndex].name ? "名稱重複了！" : ""
-                self.professionNoticeLabel.isHidden = !checkDuplicate[cellIndex].profession
-                self.professionNoticeLabel.text = checkDuplicate[cellIndex].profession ? "職業重複了！" : ""
-                
-            }
-            .store(in: &cancellables)
-        
         // 绑定名字输入框到ViewModel的对应CurrentValueSubject
         nameTextField.textPublisher
             .compactMap { $0 }
-            //.print()
-        // 使用cellIndex选择正确的CurrentValueSubject
+            // 使用cellIndex选择正确的CurrentValueSubject
             .assign(to: \.characters[cellIndex].name, on: viewModel)
             .store(in: &cancellables)
         
         // 绑定职业输入框到ViewModel的对应CurrentValueSubject
         professionTextField.textPublisher
             .compactMap { $0 }
-        // 使用cellIndex选择正确的CurrentValueSubject
+            // 使用cellIndex选择正确的CurrentValueSubject
             .assign(to: \.characters[cellIndex].profession, on: viewModel)
             .store(in: &cancellables)
         
-        // 监听来自ViewModel的错误状态更新
-        viewModel.errorsPublisher
-            .receive(on: RunLoop.main)
+        // 從 DataModel 中取出
+        let character = viewModel.characters[cellIndex]
+        character.$name
+            .compactMap { $0 }
+            .assign(to: \.text, on: nameTextField)
+            .store(in: &cancellables)
+        
+        character.$profession
+            .compactMap { $0 }
+            .assign(to: \.text, on: professionTextField)
+            .store(in: &cancellables)
+
+        // 更新名稱错误提示UI
+        viewModel.$checkResults
+            .compactMap { result in
+                result.map { $0 }
+            }
             .sink { [weak self] errors in
                 // 确保cellIndex没有越界
                 guard errors.indices.contains(cellIndex) else { return }
                 let error = errors[cellIndex]
-                
-                // 更新名字和职业的错误提示UI
                 self?.nameNoticeLabel.isHidden = !error.name
                 self?.nameNoticeLabel.text = error.name ? "名稱重複了！" : ""
-                
+            }
+            .store(in: &cancellables)
+        
+        // 更新职业错误提示UI
+        viewModel.$checkResults
+            .compactMap { result in
+                result.map { $0 }
+            }
+            .sink { [weak self] errors in
+                // 确保cellIndex没有越界
+                guard errors.indices.contains(cellIndex) else { return }
+                let error = errors[cellIndex]
                 self?.professionNoticeLabel.isHidden = !error.profession
                 self?.professionNoticeLabel.text = error.profession ? "職業重複了" : ""
             }

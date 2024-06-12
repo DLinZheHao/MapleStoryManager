@@ -13,19 +13,13 @@ class IDCardViewModel {
     @Published var characters: [Character] = []
     /// 儲存驗證錯誤狀態
     @Published var checkResults: [CheckDuplicate] = []
+    /// 按鍵是否可以啟用
+    /// var comfirmBtnEnable = PassthroughSubject<Bool, Never>()
+    @Published var comfirmBtnEnable: Bool?
     /// 錯誤訊息
     var errorsPublisher = PassthroughSubject<[CheckDuplicate], Never>()
     
     var cancellables = Set<AnyCancellable>()
-    
-    /// 名稱的發布（全部加總再一起）
-    var namePublisers = Just<[String]>([]).eraseToAnyPublisher()
-    /// 職業的發布（全部加總再一起）
-    var professionPublishers = Just<[String]>([]).eraseToAnyPublisher()
-    /// 檢查資料有無重複 true -> pass false -> not ok
-    var duplicateCheck = PassthroughSubject<Bool, Never>()
-    /// 按鍵是否可以啟用
-    var comfirmBtnEnable = PassthroughSubject<Bool, Never>()
     
     /// 初始化整個紀錄模組
     func setup( _ charactersNum: Int) {
@@ -33,10 +27,10 @@ class IDCardViewModel {
         characters = (0..<charactersNum).map { _ in Character() }
         // 初始化检查结果数组，假设初始时没有错误
         checkResults = Array(repeating: CheckDuplicate(name: false, profession: false), count: charactersNum)
-        
-        namePublisers = IDCardViewModel.createNamePublishers(characters)
+        // 名稱的發佈（全部加總再一起）
+        let namePublisers = IDCardViewModel.createNamePublishers(characters)
         // 職業的發布（全部加總再一起）
-        professionPublishers = IDCardViewModel.createProfessionPublisers(characters)
+        let professionPublishers = IDCardViewModel.createProfessionPublisers(characters)
         
         // 名稱與職業組合發布
         let combinedPublisher = namePublisers.combineLatest(professionPublishers)
@@ -60,9 +54,10 @@ class IDCardViewModel {
         let namesWithIndex = combinedInfo.map { (index, name, _) in return (index, name) } // (Index, Name)
         let professionsWithIndex = combinedInfo.map { (index, _, profession) in return (index, profession) } // (Index, Profession)
 
-        // 检查名称重复
+        // 检查名称重复 -> 去除頭尾空白 ＆ 檢查不是空白
         for (index, name) in namesWithIndex {
-            let duplicateNamesCount = namesWithIndex.filter { $1 == name && !$1.isEmpty }.count
+            let duplicateNamesCount = namesWithIndex.filter {
+                $1.trimmingCharacters(in: .whitespaces) == name.trimmingCharacters(in: .whitespaces) && !$1.isEmpty }.count
             if duplicateNamesCount > 1 {
                 checkResults[index].name = true
             } else {
@@ -70,9 +65,10 @@ class IDCardViewModel {
             }
         }
 
-        // 检查职业重复
+        // 检查职业重复 -> 去除頭尾空白 ＆ 檢查不是空白
         for (index, profession) in professionsWithIndex {
-            let duplicateProfessionsCount = professionsWithIndex.filter { $1 == profession && !$1.isEmpty }.count
+            let duplicateProfessionsCount = professionsWithIndex.filter {
+                $1.trimmingCharacters(in: .whitespaces) == profession.trimmingCharacters(in: .whitespaces) && !$1.isEmpty }.count
             if duplicateProfessionsCount > 1 {
                 checkResults[index].profession = true
             } else {
@@ -111,15 +107,12 @@ class IDCardViewModel {
         }
         return combinedPublisher
     }
-    // 这个方法可以在用户按下确认按钮时调用
-    func sendData() {
-        // 发送数据的逻辑...
-    }
 }
 
-// 你的角色模型，需要遵守Equatable来比较
-class Character: ObservableObject {
+class Character {
+    /// 名稱
     @Published var name: String
+    /// 職業
     @Published var profession: String
     
     init(name: String = "", profession: String = "") {

@@ -12,29 +12,41 @@ struct ListView: View {
     var viewModel = ListDataModel()
     
     var body: some View {
-        
-        List(viewModel.blogs, id: \.id) { blog in
-            
-            VStack(alignment: .leading) {
-                Image(blog.image)
-                    .resizable()
-                    .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                    .frame(maxWidth: .infinity)
-                Text(blog.title)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                Text(blog.author)
-                HStack {
-                    ForEach(0...blog.star, id: \.self) { _ in
-                        Text("*")
+        NavigationView {
+            List(viewModel.blogs, id: \.id) { blog in
+                
+                VStack(alignment: .leading) {
+                    Image(blog.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity)
+                    Text(blog.title)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.leading, 20)
+                    Text(blog.author)
+                    HStack {
+                        ForEach(0...blog.star, id: \.self) { _ in
+                            Text("*")
+                        }
                     }
+                    Text(blog.desc)
                 }
-                Text(blog.desc)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(.gray)
+                .listRowInsets(EdgeInsets())
             }
-            
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 0)
+            .padding(.top, 10)
+            .background(.yellow)
+            .listStyle(.plain)
+            .navigationTitle("紀錄")
             
         }
         
+        // .scrollContentBackground(.hidden)
 //        List(viewModel.restaurants, id: \.id) { restaurant in
 //            HStack {
 //                Image(restaurant.image)
@@ -49,6 +61,7 @@ struct ListView: View {
 //            // BasicImageRow(restaurant: restaurant)
 //            FullImageRow(restaurant: restaurant)
 //        }
+        
     }
 }
 
@@ -95,3 +108,4 @@ struct FullImageRow: View {
         }
     }
 }
+
