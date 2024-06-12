@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05A403742C197223004F49DB /* TagLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A403732C197223004F49DB /* TagLineViewController.swift */; };
+		05A403762C19726B004F49DB /* TagLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A403752C19726B004F49DB /* TagLineView.xib */; };
+		05A403782C197318004F49DB /* TagLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A403772C197318004F49DB /* TagLineView.swift */; };
 		05A9B13D2B69F1D7002BE376 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A9B13C2B69F1D7002BE376 /* UILabelExtension.swift */; };
 		05B6A8B82BF6EFDB0091DD80 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B6A8B72BF6EFDB0091DD80 /* CounterView.swift */; };
 		05B6A8BB2BF6F7EE0091DD80 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B6A8BA2BF6F7EE0091DD80 /* ListView.swift */; };
@@ -41,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		055FC2AA7106D10296CE75EA /* Pods-MapleStoryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapleStoryManager.release.xcconfig"; path = "Target Support Files/Pods-MapleStoryManager/Pods-MapleStoryManager.release.xcconfig"; sourceTree = "<group>"; };
+		05A403732C197223004F49DB /* TagLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLineViewController.swift; sourceTree = "<group>"; };
+		05A403752C19726B004F49DB /* TagLineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagLineView.xib; sourceTree = "<group>"; };
+		05A403772C197318004F49DB /* TagLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLineView.swift; sourceTree = "<group>"; };
 		05A9B13C2B69F1D7002BE376 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		05B6A8B72BF6EFDB0091DD80 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		05B6A8BA2BF6F7EE0091DD80 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -88,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05A403722C1971F7004F49DB /* LineTagView */ = {
+			isa = PBXGroup;
+			children = (
+				05A403732C197223004F49DB /* TagLineViewController.swift */,
+				05A403752C19726B004F49DB /* TagLineView.xib */,
+				05A403772C197318004F49DB /* TagLineView.swift */,
+			);
+			path = LineTagView;
+			sourceTree = "<group>";
+		};
 		05A9B1382B69E717002BE376 /* Battlefield */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +267,7 @@
 		05ED601B2B634D57006A53F0 /* MapleStoryManager */ = {
 			isa = PBXGroup;
 			children = (
+				05A403722C1971F7004F49DB /* LineTagView */,
 				05DD3DE52BEC9CAF000ACA79 /* swiftUIRE */,
 				05F87AAF2B8063C400D23DF7 /* CombineExtension */,
 				05A9B13B2B69E753002BE376 /* Extension */,
@@ -359,6 +376,7 @@
 				05ED60292B634D58006A53F0 /* LaunchScreen.storyboard in Resources */,
 				05ED60262B634D58006A53F0 /* Assets.xcassets in Resources */,
 				05ED60242B634D57006A53F0 /* Main.storyboard in Resources */,
+				05A403762C19726B004F49DB /* TagLineView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B886B92B6B3D4600620199 /* EnterCheckViewController.swift in Sources */,
+				05A403742C197223004F49DB /* TagLineViewController.swift in Sources */,
 				05B886BC2B6B403700620199 /* InputInfoTableViewCell.swift in Sources */,
 				05DD3DE72BEC9CE0000ACA79 /* SwiftUIView.swift in Sources */,
 				05B886B62B6B28FD00620199 /* UICollectionViewExtension.swift in Sources */,
@@ -437,6 +456,7 @@
 				05ED60322B68CFFE006A53F0 /* GameInfo.xcdatamodeld in Sources */,
 				05ED60442B68DBCE006A53F0 /* UITableViewExtension.swift in Sources */,
 				05B6A8B82BF6EFDB0091DD80 /* CounterView.swift in Sources */,
+				05A403782C197318004F49DB /* TagLineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

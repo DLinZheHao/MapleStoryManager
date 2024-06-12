@@ -38,7 +38,8 @@ class LobbyViewController: UIViewController {
         
         let items = [FunctionData(name: "新增資料更新"),
                      FunctionData(name: "驗證輸入"),
-                     FunctionData(name: "swiftUI 測試")
+                     FunctionData(name: "swiftUI 測試"),
+                     FunctionData(name: "tag 換行")
         ]
         snapshot.appendItems(items)
         dataSource.apply(snapshot, animatingDifferences: true)
@@ -66,10 +67,13 @@ extension LobbyViewController: UICollectionViewDelegate {
             } else if item.name == "驗證輸入" {
                 let enterCheckVc = EnterCheckViewController.fromSB(charactersNum: 2)
                 self.navigationController?.pushViewController(enterCheckVc, animated: true)
-            } else if item.name == "swiftUI 簡單入門測試畫面" {
+            } else if item.name == "swiftUI 測試" {
                 let swiftUIView = SwiftUIView()
                 let hostingController = UIHostingController(rootView: swiftUIView)
                 self.navigationController?.pushViewController(hostingController, animated: true)
+            } else if item.name == "tag 換行" {
+                let tagLineVc = TagLineViewController.fromSB()
+                self.navigationController?.pushViewController(tagLineVc, animated: true)
             }
                    
         }

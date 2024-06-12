@@ -16,9 +16,7 @@ class IDCardViewModel {
     /// 按鍵是否可以啟用
     /// var comfirmBtnEnable = PassthroughSubject<Bool, Never>()
     @Published var comfirmBtnEnable: Bool?
-    /// 錯誤訊息
-    var errorsPublisher = PassthroughSubject<[CheckDuplicate], Never>()
-    
+
     var cancellables = Set<AnyCancellable>()
     
     /// 初始化整個紀錄模組
@@ -75,9 +73,6 @@ class IDCardViewModel {
                 checkResults[index].profession = false
             }
         }
-        
-        // 发送更新的错误状态
-        errorsPublisher.send(checkResults)
     }
     /// 名稱發布員創建
     static func createNamePublishers(_ characters: [Character]) -> AnyPublisher<[String], Never> {

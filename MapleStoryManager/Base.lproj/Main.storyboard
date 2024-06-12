@@ -161,6 +161,39 @@
             </objects>
             <point key="canvasLocation" x="75.572519083969468" y="-27.464788732394368"/>
         </scene>
+        <!--Tag Line View Controller-->
+        <scene sceneID="J6Q-G1-wcX">
+            <objects>
+                <viewController storyboardIdentifier="TagLineViewController" id="ac7-Xu-xR2" customClass="TagLineViewController" customModule="MapleStoryManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zc0-y1-iY7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6r-VP-BRG" customClass="TagLineView" customModule="MapleStoryManager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="G39-Sk-AHQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Twh-UZ-c5T"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c6r-VP-BRG" firstAttribute="top" secondItem="Twh-UZ-c5T" secondAttribute="top" id="Ge7-LE-pje"/>
+                            <constraint firstItem="Twh-UZ-c5T" firstAttribute="trailing" secondItem="c6r-VP-BRG" secondAttribute="trailing" id="Mq6-Gr-VGx"/>
+                            <constraint firstItem="Twh-UZ-c5T" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="c6r-VP-BRG" secondAttribute="bottom" constant="709" id="Uve-nw-3Mj"/>
+                            <constraint firstItem="c6r-VP-BRG" firstAttribute="leading" secondItem="Twh-UZ-c5T" secondAttribute="leading" id="mFK-8p-2TQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tagLineView" destination="c6r-VP-BRG" id="Rif-h4-sw3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dea-W6-Y57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="661"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="b9s-0B-pgq">
             <objects>
