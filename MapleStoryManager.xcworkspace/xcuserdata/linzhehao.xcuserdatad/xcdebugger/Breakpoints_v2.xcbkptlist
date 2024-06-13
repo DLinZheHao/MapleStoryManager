@@ -148,5 +148,258 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58E1B6DD-CDBB-4354-8407-6449E082E218"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/LineTagView/TagLineView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "setup(maxWid:_:tagStrs:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "58E1B6DD-CDBB-4354-8407-6449E082E218 - 63522ecc9a7f3d27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "2592">
+               </Location>
+               <Location
+                  uuid = "58E1B6DD-CDBB-4354-8407-6449E082E218 - 63522ecc9a7f3d00"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "2600">
+               </Location>
+               <Location
+                  uuid = "58E1B6DD-CDBB-4354-8407-6449E082E218 - 63522ecc9a7f3d27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "2584">
+               </Location>
+               <Location
+                  uuid = "58E1B6DD-CDBB-4354-8407-6449E082E218 - 63522ecc9a7f3d61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "2836">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "302D2DD1-EEA9-41E3-8844-E89B46AFA909"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/LineTagView/TagLineView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "setup(maxWid:_:tagStrs:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A586EC34-E306-49A2-95BA-2F589A159BF3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/LineTagView/TagLineView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "setup(maxWid:_:tagStrs:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A586EC34-E306-49A2-95BA-2F589A159BF3 - 63522ecc9a7f3fba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "2316">
+               </Location>
+               <Location
+                  uuid = "A586EC34-E306-49A2-95BA-2F589A159BF3 - 63522ecc9a7f3fba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "2328">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC9BEA7D-439D-4D30-8977-E780FD9AFDEF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/LineTagView/TagLineView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "setup(maxWid:_:tagStrs:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CC9BEA7D-439D-4D30-8977-E780FD9AFDEF - 63522ecc9a7f3ced"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "2048">
+               </Location>
+               <Location
+                  uuid = "CC9BEA7D-439D-4D30-8977-E780FD9AFDEF - 63522ecc9a7f3dab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "2384">
+               </Location>
+               <Location
+                  uuid = "CC9BEA7D-439D-4D30-8977-E780FD9AFDEF - 63522ecc9a7f3d84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "2100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "620BCFC0-B79A-4F0F-A400-DE9DECE46D7F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MapleStoryManager/LineTagView/TagLineView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "setup(maxWid:_:tagStrs:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "620BCFC0-B79A-4F0F-A400-DE9DECE46D7F - 63522ecc9a7f3ced"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "1864">
+               </Location>
+               <Location
+                  uuid = "620BCFC0-B79A-4F0F-A400-DE9DECE46D7F - 63522ecc9a7f3ced"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MapleStoryManager.TagLineView.setup(maxWid: CoreGraphics.CGFloat, _: CoreGraphics.CGFloat, tagStrs: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MapleStoryManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/linzhehao/Desktop/MapleStoryManager/MapleStoryManager/LineTagView/TagLineView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "1840">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

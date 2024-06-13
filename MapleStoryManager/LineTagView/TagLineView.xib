@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="98"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-aA-TOl">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-aA-TOl">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="98"/>
                 </stackView>
             </subviews>
