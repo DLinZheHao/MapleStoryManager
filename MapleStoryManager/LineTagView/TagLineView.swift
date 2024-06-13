@@ -32,11 +32,7 @@ class TagLineView: UIView {
          loadInterface()
     }
     
-    override func draw(_ rect: CGRect) {
-//        layer.cornerRadius = 6
-//        clipsToBounds = true
-//        layer.insertSublayer(gradientLayer, at: 0)
-    }
+    override func draw(_ rect: CGRect) {}
     
     /// 載入xib
     private func loadInterface() {
@@ -67,103 +63,56 @@ class TagLineView: UIView {
     
     func setup(maxWid: CGFloat, _ borderWidth: CGFloat = 1, tagStrs: [String]) {
         
+        // 儲存使用的 section (View) item (Label)
         var bgViews = [UIView]()
         var tagLabels = [UILabel]()
         
+        // 管理儲存的 section (View) item (Label) 怎麼使用
         var widCount: CGFloat = 0
         var bgViewIndex = 0
         var tagIndex = 0
+        var isNewSectionCreate = false
+        // 預設建設第一個 section
+        addSection(&bgViews)
         
         for (index, tagStr) in tagStrs.enumerated() {
             
-            let tagLabel = UILabelPadding()
-            tagLabel.numberOfLines = 0
-            tagLabel.font = UIFont.systemFont(ofSize: 17)
-            tagLabel.textLineHeight(tagStr)
-            tagLabel.layer.borderWidth = borderWidth
-            tagLabel.layer.borderColor = UIColor.black.cgColor
-            tagLabel.layer.cornerRadius = 2
-            tagLabel.textAlignment = .left
-            tagLabel.paddingLeft = 4
-            tagLabel.paddingRight = 4
-            tagLabel.paddingTop = 1
-            tagLabel.paddingBottom = 1
+            let tagLabel = paddingLabelSet(tagStr, borderWidth)
             
             // 计算 label 在特定高度限制下的尺寸
             let maxSize = CGSize(width: maxWid, height: tagLabel.font.lineHeight)
             let requiredSize = tagLabel.sizeThatFits(maxSize)
             
-            /// 初始化第一個容器
-            if index == 0 {
-                let bgView = UIView()
-                bgStackView.addArrangedSubview(bgView)
-                bgViews.append(bgView)
-                
-                if widCount + requiredSize.width + 12 + 2 + 8 >= maxWid {
-                    tagLabel.backgroundColor = .white
-                    bgViews[bgViewIndex].addSubview(tagLabel)
-                    bgViews[bgViewIndex].translatesAutoresizingMaskIntoConstraints = false
-                    let heightConstraint = bgViews[bgViewIndex].heightAnchor.constraint(equalToConstant: requiredSize.height)
-                    heightConstraint.priority = UILayoutPriority(1000) // 設置優先級，範圍是 1 到 1000
-                    heightConstraint.isActive = true
-                    tagLabel.translatesAutoresizingMaskIntoConstraints = false
-                    NSLayoutConstraint.activate([
-                        tagLabel.topAnchor.constraint(equalTo: bgViews[bgViewIndex].topAnchor),
-                        tagLabel.bottomAnchor.constraint(greaterThanOrEqualTo: bgViews[bgViewIndex].bottomAnchor),
-                        tagLabel.leadingAnchor.constraint(equalTo: bgViews[bgViewIndex].leadingAnchor),
-                        tagLabel.trailingAnchor.constraint(equalTo: bgViews[bgViewIndex].trailingAnchor)
-                    ])
-                    
-                    bgViewIndex += 1
-                    let bgView = UIView()
-                    bgStackView.addArrangedSubview(bgView)
-                    bgViews.append(bgView)
-                }
-                
-            }
-            // 2 -> 上下兼具 8 -> item 之間 spacing 12 -> 左右兼具  超過可用就要產一個新的 bgView (換行)
-            else if widCount + requiredSize.width + 12 + 2 + 8 >= maxWid {
+            // 2 -> 上下兼具 8 -> item 之間 spacing 12 -> 左右兼具，超過可用就要產一個新的 bgView (換行)
+            if widCount + requiredSize.width + 12 + 2 + 8 >= maxWid {
+                // 換行就要清空
                 tagLabels = []
                 widCount = 0
                 tagIndex = 0
-                let bgView = UIView()
-                bgStackView.addArrangedSubview(bgView)
-                bgViews.append(bgView)
-                bgViewIndex += 1
-                bgViews[bgViewIndex].addSubview(tagLabel)
+                    
+                if index != 0 {
+                    addSection(&bgViews)
+                    bgViewIndex += 1
+                }
                 
-                bgView.translatesAutoresizingMaskIntoConstraints = false
-                let heightConstraint = bgView.heightAnchor.constraint(equalToConstant: 20)
-                heightConstraint.priority = UILayoutPriority(750) // 設置優先級，範圍是 1 到 1000
-                heightConstraint.isActive = true
-                tagLabel.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                    tagLabel.topAnchor.constraint(equalTo: bgView.topAnchor),
-                    tagLabel.bottomAnchor.constraint(greaterThanOrEqualTo: bgView.bottomAnchor),
-                    tagLabel.leadingAnchor.constraint(equalTo: bgView.leadingAnchor),
-                    tagLabel.trailingAnchor.constraint(equalTo: bgView.trailingAnchor)
-                ])
+                bgViews[bgViewIndex].addSubview(tagLabel)
+                setAllConstraint(tagLabel, bgViews[bgViewIndex], requiredSize.height)
+                isNewSectionCreate = true
             } else {
-                tagLabel.backgroundColor = .white
+                if isNewSectionCreate {
+                    bgViewIndex += 1
+                    addSection(&bgViews)
+                    isNewSectionCreate = false
+                }
                 bgViews[bgViewIndex].addSubview(tagLabel)
-                
-                bgViews[bgViewIndex].translatesAutoresizingMaskIntoConstraints = false
-                bgViews[bgViewIndex].heightAnchor.constraint(greaterThanOrEqualToConstant: 20).isActive = true
-                
+                setViewHConstraint(bgViews[bgViewIndex], requiredSize.height)
+
                 tagLabel.translatesAutoresizingMaskIntoConstraints = false
                 
                 if tagLabels.isEmpty {
-                    NSLayoutConstraint.activate([
-                        tagLabel.topAnchor.constraint(equalTo: bgViews[bgViewIndex].topAnchor),
-                        tagLabel.bottomAnchor.constraint(lessThanOrEqualTo: bgViews[bgViewIndex].bottomAnchor),
-                        tagLabel.leadingAnchor.constraint(equalTo: bgViews[bgViewIndex].leadingAnchor)
-                    ])
+                    setTagConstraint(tagLabel, bgViews[bgViewIndex], isTag: false)
                 } else {
-                    NSLayoutConstraint.activate([
-                        tagLabel.topAnchor.constraint(equalTo: bgViews[bgViewIndex].topAnchor),
-                        tagLabel.bottomAnchor.constraint(lessThanOrEqualTo: bgViews[bgViewIndex].bottomAnchor),
-                        tagLabel.leadingAnchor.constraint(equalTo: tagLabels[tagIndex - 1].trailingAnchor, constant: 8)
-                    ])
+                    setTagConstraint(tagLabel, bgViews[bgViewIndex], tagLabels[tagIndex - 1], isTag: true)
                 }
                 
                 tagLabels.append(tagLabel)
@@ -176,6 +125,66 @@ class TagLineView: UIView {
         
     }
     
+    private func addSection(_ bgViews: inout [UIView]) {
+        let bgView = UIView()
+        bgStackView.addArrangedSubview(bgView)
+        bgViews.append(bgView)
+    }
+
+    /// 設置 tag label 屬性
+    private func paddingLabelSet(_ str: String, _ borderWid: CGFloat) -> UILabelPadding {
+        let tagLabel = UILabelPadding()
+        tagLabel.numberOfLines = 0
+        tagLabel.font = UIFont.systemFont(ofSize: 17)
+        tagLabel.textLineHeight(str)
+        tagLabel.layer.borderWidth = borderWid
+        tagLabel.layer.borderColor = UIColor.black.cgColor
+        tagLabel.layer.cornerRadius = 2
+        tagLabel.textAlignment = .left
+        tagLabel.paddingLeft = 4
+        tagLabel.paddingRight = 4
+        tagLabel.paddingTop = 1
+        tagLabel.paddingBottom = 1
+        
+        return tagLabel
+    }
+    
+    private func setViewHConstraint(_ view: UIView, _ height: CGFloat) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        let heightConstraint = view.heightAnchor.constraint(equalToConstant: height)
+        heightConstraint.priority = UILayoutPriority(1000)
+        heightConstraint.isActive = true
+    }
+    
+    private func setAllConstraint(_ label: UILabel, _ view: UIView, _ height: CGFloat) {
+        setViewHConstraint(view, height)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: view.topAnchor),
+            label.bottomAnchor.constraint(greaterThanOrEqualTo: view.bottomAnchor),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+    
+    private func setTagConstraint(_ label: UILabel, _ view: UIView, _ label2: UILabel? = nil, isTag: Bool) {
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        if isTag, let label2 = label2 {
+            NSLayoutConstraint.activate([
+                label.topAnchor.constraint(equalTo: view.topAnchor),
+                label.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
+                label.leadingAnchor.constraint(equalTo: label2.trailingAnchor, constant: 8)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                label.topAnchor.constraint(equalTo: view.topAnchor),
+                label.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
+                label.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+            ])
+        }
+    }
 }
 
 

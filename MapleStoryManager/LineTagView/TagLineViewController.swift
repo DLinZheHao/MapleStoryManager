@@ -14,7 +14,7 @@ class TagLineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tagLineView.setup(maxWid: view.frame.width, tagStrs: ["asdadasdasdhorizontalasdasdadasdasdasdasdadasdasdasd", "qweqwe", "asdasda", "asdasd"])
+        tagLineView.setup(maxWid: view.frame.width, tagStrs: ["asdadasdasdhorizontalasdasdadasdasdasdasdadasdasdasd", "asdadasdasdhorizontalasdasdadasdasdasdasdadasdasdasd", "asdasda", "asdasd", "asdadasdasdhorizontalasdasdadasdasdasdasdadasdasdasd","asda"])
     }
     
     @objc static func fromSB() -> TagLineViewController {
